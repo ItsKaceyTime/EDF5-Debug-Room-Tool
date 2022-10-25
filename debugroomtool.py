@@ -116,9 +116,30 @@ enemydrop3b.grid(row=5, column=1, padx=10, pady=10)
 enemy3path.grid(row=4, column=1, padx=10, pady=10)
 
 def button():
+
+    values = {
+    "%SPAWN1RADIUSFLOAT%" : "1.0f",
+    "%SPAWN1ENEMYSTRING%" : enemy1path['text'],
+    "%SPAWN1AMOUNTINT%" : "1",
+    "%SPAWN1HEALTHFLOAT%" : "1.0f",
+    "%SPAWN1AGGROBOOL%" : "1",
+    
+    "%SPAWN2RADIUSFLOAT%" : "1.0f",
+    "%SPAWN2ENEMYSTRING%" : enemy2path['text'],
+    "%SPAWN2AMOUNTINT%" : "1",
+    "%SPAWN2HEALTHFLOAT%" : "1.0f",
+    "%SPAWN2AGGROBOOL%" : "1",
+
+    "%SPAWN3RADIUSFLOAT%" : "1.0f",
+    "%SPAWN3ENEMYSTRING%" : enemy3path['text'],
+    "%SPAWN3AMOUNTINT%" : "1",
+    "%SPAWN3HEALTHFLOAT%" : "1.0f",
+    "%SPAWN3AGGROBOOL%" : "1"
+    }
+    
     global window2
     window2 = tk.Toplevel(master=mainframe)
-    window2.title = "Booby"
+    window2.title = "Inject"
     window2.resizable(width=False, height=False)
     window2.grid()
     popuplabel = tk.Label(master=window2, text="Injected! (Not really yet lol)")
@@ -127,6 +148,12 @@ def button():
     popuplabel.grid()
     closebutton.grid(sticky="nsew")
     window2.protocol("WM_DELETE_WINDOW", popupdestroy)
+    with open('dummy.txt', 'r', encoding="utf_16_be") as f:
+        source = f.read()
+        for key in values.keys():
+            source = source.replace(key, values[key])
+    with open('mission.txt', 'w', encoding="utf_16_be") as f:
+        f.write(source)
 
 def popupdestroy():
     confirm['state'] = "normal"
