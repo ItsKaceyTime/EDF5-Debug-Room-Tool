@@ -20,11 +20,11 @@ enemylist = {
         "leader" : {"filepath" : "app:/OBJECT/E503_FROG_AF_LEADER.SGO"}
     },        
     "spider" : "app:/OBJECT/GIANTSPIDER01.SGO",
-    "alien" : {
-        "basealien" : {"filepath" : "app:/OBJECT/E506_BIGGREY_AF.SGO"},
-        "LL?" : {"filepath" : "app:/OBJECT/E506_BIGGREY_LL.SGO"},
-        "leader" : {"filepath" : "app:/OBJECT/E506_BIGGREY_AF_LEADER.SGO"}
-    }
+    # "alien" : {
+    #     "basealien" : {"filepath" : "app:/OBJECT/E506_BIGGREY_AF.SGO"},
+    #     "LL?" : {"filepath" : "app:/OBJECT/E506_BIGGREY_LL.SGO"},
+    #     "leader" : {"filepath" : "app:/OBJECT/E506_BIGGREY_AF_LEADER.SGO"}
+    # }
 }
 
 def callback(i,r):
@@ -83,8 +83,8 @@ enemy1amountlabel = tk.Label(master=enemy1frame, text="Amount")
 enemy1health = tk.Entry(master=enemy1frame, width=10)
 enemy1health.insert(0, "1.0f")
 enemy1healthlabel = tk.Label(master=enemy1frame, text="Health %")
-enemy1aggro = ttk.Combobox(master=enemy1frame, values=("Yes", "No"), state="readonly", width=7)
-enemy1aggro.current(0)
+isaggro1 = tk.IntVar()
+enemy1aggro = ttk.Checkbutton(master=enemy1frame, variable=isaggro1, onvalue=1, offvalue=0)
 enemy1aggrolabel = tk.Label(master=enemy1frame, text="Aggro?")
 
 enemydrop2a = ttk.Combobox(master=enemy2frame, values=list(enemylist.keys()), state="readonly")
@@ -100,8 +100,8 @@ enemy2amountlabel = tk.Label(master=enemy2frame, text="Amount")
 enemy2health = tk.Entry(master=enemy2frame, width=10)
 enemy2health.insert(0, "1.0f")
 enemy2healthlabel = tk.Label(master=enemy2frame, text="Health %")
-enemy2aggro = ttk.Combobox(master=enemy2frame, values=("Yes", "No"), state="readonly", width=7)
-enemy2aggro.current(0)
+isaggro2 = tk.IntVar()
+enemy2aggro = ttk.Checkbutton(master=enemy2frame, variable=isaggro2, onvalue=1, offvalue=0)
 enemy2aggrolabel = tk.Label(master=enemy2frame, text="Aggro?")
 
 enemydrop3a = ttk.Combobox(master=enemy3frame, values=list(enemylist.keys()), state="readonly")
@@ -117,8 +117,8 @@ enemy3amountlabel = tk.Label(master=enemy3frame, text="Amount")
 enemy3health = tk.Entry(master=enemy3frame, width=10)
 enemy3health.insert(0, "1.0f")
 enemy3healthlabel = tk.Label(master=enemy3frame, text="Health %")
-enemy3aggro = ttk.Combobox(master=enemy3frame, values=("Yes", "No"), state="readonly", width=7)
-enemy3aggro.current(0)
+isaggro3 = tk.IntVar()
+enemy3aggro = ttk.Checkbutton(master=enemy3frame, variable=isaggro3, onvalue=1, offvalue=0)
 enemy3aggrolabel = tk.Label(master=enemy3frame, text="Aggro?")
 
 variables = [
@@ -179,15 +179,15 @@ enemy3aggro.grid(row=5, column=5, padx=10)
 enemy3aggrolabel.grid(row=4, column=5, padx=10)
 
 def button():
-    if enemy1aggro.get() == "Yes":
+    if isaggro1.get() == 1:
         aggro1="1"
     else:
         aggro1="0"
-    if enemy2aggro.get() == "Yes":
+    if isaggro2.get() == 1:
         aggro2="1"
     else:
         aggro2="0"
-    if enemy3aggro.get() == "Yes":
+    if isaggro3.get() == 1:
         aggro3="1"
     else:
         aggro3="0"
