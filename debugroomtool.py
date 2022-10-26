@@ -74,16 +74,52 @@ enemydrop1a = ttk.Combobox(master=enemy1frame, values=list(enemylist.keys()), st
 enemydrop1a.current(0)
 enemydrop1b = ttk.Combobox(master=enemy1frame, values=[], state="disabled")
 enemy1path = tk.Label(master=enemy1frame, text="app:/OBJECT/GIANTANT01.SGO")
+enemy1radius = tk.Entry(master=enemy1frame, width=10)
+enemy1radius.insert(0, "1.0f")
+enemy1radiuslabel = tk.Label(master=enemy1frame, text="Radius")
+enemy1amount = tk.Entry(master=enemy1frame, width=10)
+enemy1amount.insert(0, "1")
+enemy1amountlabel = tk.Label(master=enemy1frame, text="Amount")
+enemy1health = tk.Entry(master=enemy1frame, width=10)
+enemy1health.insert(0, "1.0f")
+enemy1healthlabel = tk.Label(master=enemy1frame, text="Health %")
+enemy1aggro = ttk.Combobox(master=enemy1frame, values=("Yes", "No"), state="readonly", width=7)
+enemy1aggro.current(0)
+enemy1aggrolabel = tk.Label(master=enemy1frame, text="Aggro?")
 
 enemydrop2a = ttk.Combobox(master=enemy2frame, values=list(enemylist.keys()), state="readonly")
 enemydrop2a.current(0)
 enemydrop2b = ttk.Combobox(master=enemy2frame, values=[], state="disabled")
 enemy2path = tk.Label(master=enemy2frame, text="app:/OBJECT/GIANTANT01.SGO")
+enemy2radius = tk.Entry(master=enemy2frame, width=10)
+enemy2radius.insert(0, "1.0f")
+enemy2radiuslabel = tk.Label(master=enemy2frame, text="Radius")
+enemy2amount = tk.Entry(master=enemy2frame, width=10)
+enemy2amount.insert(0, "1")
+enemy2amountlabel = tk.Label(master=enemy2frame, text="Amount")
+enemy2health = tk.Entry(master=enemy2frame, width=10)
+enemy2health.insert(0, "1.0f")
+enemy2healthlabel = tk.Label(master=enemy2frame, text="Health %")
+enemy2aggro = ttk.Combobox(master=enemy2frame, values=("Yes", "No"), state="readonly", width=7)
+enemy2aggro.current(0)
+enemy2aggrolabel = tk.Label(master=enemy2frame, text="Aggro?")
 
 enemydrop3a = ttk.Combobox(master=enemy3frame, values=list(enemylist.keys()), state="readonly")
 enemydrop3a.current(0)
 enemydrop3b = ttk.Combobox(master=enemy3frame, values=[], state="disabled")
 enemy3path = tk.Label(master=enemy3frame, text="app:/OBJECT/GIANTANT01.SGO")
+enemy3radius = tk.Entry(master=enemy3frame, width=10)
+enemy3radius.insert(0, "1.0f")
+enemy3radiuslabel = tk.Label(master=enemy3frame, text="Radius")
+enemy3amount = tk.Entry(master=enemy3frame, width=10)
+enemy3amount.insert(0, "1")
+enemy3amountlabel = tk.Label(master=enemy3frame, text="Amount")
+enemy3health = tk.Entry(master=enemy3frame, width=10)
+enemy3health.insert(0, "1.0f")
+enemy3healthlabel = tk.Label(master=enemy3frame, text="Health %")
+enemy3aggro = ttk.Combobox(master=enemy3frame, values=("Yes", "No"), state="readonly", width=7)
+enemy3aggro.current(0)
+enemy3aggrolabel = tk.Label(master=enemy3frame, text="Aggro?")
 
 variables = [
     enemydrop1a,
@@ -109,33 +145,71 @@ enemydrop3b.bind('<<ComboboxSelected>>', lambda i : filepath(6,4))
 enemydrop1a.grid(row=1, column=0, padx=10, pady=10, sticky="nsew")
 enemydrop1b.grid(row=1, column=1, padx=10, pady=10, sticky="nsew")
 enemy1path.grid(row=0, column=1, padx=10, pady=10, sticky="nsew")
+enemy1radius.grid(row=1, column=2, padx=10)
+enemy1radiuslabel.grid(row=0, column=2, padx=10)
+enemy1amount.grid(row=1, column=3, padx=10)
+enemy1amountlabel.grid(row=0, column=3, padx=10)
+enemy1health.grid(row=1, column=4, padx=10)
+enemy1healthlabel.grid(row=0, column=4, padx=10)
+enemy1aggro.grid(row=1, column=5, padx=10)
+enemy1aggrolabel.grid(row=0, column=5, padx=10)
+
 enemydrop2a.grid(row=3, column=0, padx=10, pady=10, sticky="nsew")
 enemydrop2b.grid(row=3, column=1, padx=10, pady=10, sticky="nsew")
 enemy2path.grid(row=2, column=1, padx=10, pady=10, sticky="nsew")
+enemy2radius.grid(row=3, column=2, padx=10)
+enemy2radiuslabel.grid(row=2, column=2, padx=10)
+enemy2amount.grid(row=3, column=3, padx=10)
+enemy2amountlabel.grid(row=2, column=3, padx=10)
+enemy2health.grid(row=3, column=4, padx=10)
+enemy2healthlabel.grid(row=2, column=4, padx=10)
+enemy2aggro.grid(row=3, column=5, padx=10)
+enemy2aggrolabel.grid(row=2, column=5, padx=10)
+
 enemydrop3a.grid(row=5, column=0, padx=10, pady=10, sticky="nsew")
 enemydrop3b.grid(row=5, column=1, padx=10, pady=10, sticky="nsew")
 enemy3path.grid(row=4, column=1, padx=10, pady=10, sticky="nsew")
+enemy3radius.grid(row=5, column=2, padx=10)
+enemy3radiuslabel.grid(row=4, column=2, padx=10)
+enemy3amount.grid(row=5, column=3, padx=10)
+enemy3amountlabel.grid(row=4, column=3, padx=10)
+enemy3health.grid(row=5, column=4, padx=10)
+enemy3healthlabel.grid(row=4, column=4, padx=10)
+enemy3aggro.grid(row=5, column=5, padx=10)
+enemy3aggrolabel.grid(row=4, column=5, padx=10)
 
 def button():
+    if enemy1aggro.get() == "Yes":
+        aggro1="1"
+    else:
+        aggro1="0"
+    if enemy2aggro.get() == "Yes":
+        aggro2="1"
+    else:
+        aggro2="0"
+    if enemy3aggro.get() == "Yes":
+        aggro3="1"
+    else:
+        aggro3="0"
 
     values = {
-    "%SPAWN1RADIUSFLOAT%" : "1.0f",
+    "%SPAWN1RADIUSFLOAT%" : enemy1radius.get(),
     "%SPAWN1ENEMYSTRING%" : enemy1path['text'],
-    "%SPAWN1AMOUNTINT%" : "1",
-    "%SPAWN1HEALTHFLOAT%" : "1.0f",
-    "%SPAWN1AGGROBOOL%" : "1",
+    "%SPAWN1AMOUNTINT%" : enemy1amount.get(),
+    "%SPAWN1HEALTHFLOAT%" : enemy1health.get(),
+    "%SPAWN1AGGROBOOL%" : aggro1,
 
-    "%SPAWN2RADIUSFLOAT%" : "1.0f",
+    "%SPAWN2RADIUSFLOAT%" : enemy2radius.get(),
     "%SPAWN2ENEMYSTRING%" : enemy2path['text'],
-    "%SPAWN2AMOUNTINT%" : "1",
-    "%SPAWN2HEALTHFLOAT%" : "1.0f",
-    "%SPAWN2AGGROBOOL%" : "1",
+    "%SPAWN2AMOUNTINT%" : enemy2amount.get(),
+    "%SPAWN2HEALTHFLOAT%" : enemy2health.get(),
+    "%SPAWN2AGGROBOOL%" : aggro2,
 
-    "%SPAWN3RADIUSFLOAT%" : "1.0f",
+    "%SPAWN3RADIUSFLOAT%" : enemy3radius.get(),
     "%SPAWN3ENEMYSTRING%" : enemy3path['text'],
-    "%SPAWN3AMOUNTINT%" : "1",
-    "%SPAWN3HEALTHFLOAT%" : "1.0f",
-    "%SPAWN3AGGROBOOL%" : "1"
+    "%SPAWN3AMOUNTINT%" : enemy3amount.get(),
+    "%SPAWN3HEALTHFLOAT%" : enemy3health.get(),
+    "%SPAWN3AGGROBOOL%" : aggro3
     }
     
     global window2
