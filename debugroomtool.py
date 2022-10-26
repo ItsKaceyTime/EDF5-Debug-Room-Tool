@@ -21,9 +21,9 @@ enemylist = {
     },        
     "spider" : "app:/OBJECT/GIANTSPIDER01.SGO",
     "alien" : {
-        "basealien" : {"filepath" : "app:/OBJECT/BIGGREY_AF.SGO"},
-        "LL?" : {"filepath" : "app:/OBJECT/BIGGREY_LL.SGO"},
-        "leader" : {"filepath" : "app:/OBJECT/BIGGREY_AF_LEADER.SGO"}
+        "basealien" : {"filepath" : "app:/OBJECT/E506_BIGGREY_AF.SGO"},
+        "LL?" : {"filepath" : "app:/OBJECT/E506_BIGGREY_LL.SGO"},
+        "leader" : {"filepath" : "app:/OBJECT/E506_BIGGREY_AF_LEADER.SGO"}
     }
 }
 
