@@ -145,6 +145,5 @@
     "Tadpoles" : { 
         "Base Tadpoles" : "app:/OBJECT/DRAGONSMALL401.SGO",
         "Blue Tadpole" : "app:/OBJECT/DRAGONSMALL401_HS.SGO"
-    },
-    "copy-&-delete" : "app:/OBJECT/"
+    }
 }
