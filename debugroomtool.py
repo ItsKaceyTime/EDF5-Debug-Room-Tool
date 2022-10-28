@@ -1,152 +1,91 @@
+import os.path
 import tkinter as tk
 from tkinter import SUNKEN, ttk
 from subprocess import Popen, PIPE
-window = tk.Tk()
-window.title("Debug Room")
-#window.minsize(720,800)
-window.resizable(width=False, height=False)
 
-enemylist = {
+ENEMYLIST = {
     "ant" : "app:/OBJECT/GIANTANT01.SGO",
     "frog" : { 
-        "basefrog" : {"filepath" : "app:/OBJECT/E503_FROG_AF.SGO"},
-        "armor" : {"filepath" : "app:/OBJECT/E503_ARMORFROG_AF.SGO"},
-        "leader" : {"filepath" : "app:/OBJECT/E503_FROG_AF_LEADER.SGO"}
+        "basefrog" : "app:/OBJECT/E503_FROG_AF.SGO",
+        "armor" : "app:/OBJECT/E503_ARMORFROG_AF.SGO",
+        "leader" : "app:/OBJECT/E503_FROG_AF_LEADER.SGO",
     },        
     "spider" : "app:/OBJECT/GIANTSPIDER01.SGO",
     "alien" : {
-        "basealien" : {"filepath" : "app:/OBJECT/E506_BIGGREY_AF.SGO"},
-        "LL?" : {"filepath" : "app:/OBJECT/E506_BIGGREY_LL.SGO"},
-        "leader" : {"filepath" : "app:/OBJECT/E506_BIGGREY_AF_LEADER.SGO"}
+        "basealien" : "app:/OBJECT/E506_BIGGREY_AF.SGO",
+        "LL?" :  "app:/OBJECT/E506_BIGGREY_LL.SGO",
+        "leader" :  "app:/OBJECT/E506_BIGGREY_AF_LEADER.SGO",
     }
 }
 
-def callback(i):
-    drop = dropwidgets1[i]
-    drop2 = dropwidgets2[i]
-    path = pathwidgets[i]
+class TargetConfiguration(tk.Frame):
+    def __init__(self, **kwargs):
+        self.fp = None
+        self.amount = None
+        self.radius = None
+        self.hp = None
+        self.aggro = None
 
-    if type(enemylist[drop.get()]) is dict:
-        path.config(text = "")
-        drop2['values'] = list(enemylist[drop.get()].keys())
-        drop2['state'] = "readonly"
-    else:
-        drop2['values'] = None
-        drop2.set("")
-        drop2['state'] = "disabled"
-        path.config(text = enemylist[drop.get()])
-        path.update()
+        # Pass the constructor to tk.Frame.__init__() in order to get a normal tk.Frame outwards
+        super().__init__(**kwargs)
+        self._speciespicker = None
+        self._variantpicker = None
 
-def filepath(i):
-    drop = dropwidgets1[i]
-    drop2 = dropwidgets2[i]
-    path = pathwidgets[i]
+    def construct(self, num):
+        self.fp = tk.StringVar(self, "app:/OBJECT/GIANTANT01.SGO")
+        self.amount = tk.StringVar(self, "1")
+        self.radius = tk.StringVar(self, "1.0")
+        self.hp = tk.StringVar(self, "1.0")
+        self.aggro = tk.StringVar(self, "1.0")
+        self.aggro = tk.IntVar(0)
 
-    path.config(text = enemylist[drop.get()][drop2.get()]["filepath"])
-    path.update()
+        # Generate labels in order; the 2nd one needs special treatment :<
+        for i, t in enumerate([f"Enemy {num}", "", "Radius", "Amount", "Health", "Aggro"]):
+            L = tk.Label(master=self, text=t)
+            L.grid(row=0, column=i, padx=5, pady=5)
+            if i == 1: # Unique case. This label updates programmatically
+                L['textvariable'] = self.fp
 
+        # Instanciate the species pickers and add them to the class instance
+        self._speciespicker = ttk.Combobox(master=self, values=list(ENEMYLIST.keys()), state="readonly")
+        self._speciespicker.grid(row=1, column=0, padx=5, pady=5, sticky="nsew")
+        self._speciespicker.current(0)
+        self._speciespicker.bind('<<ComboboxSelected>>', self.selectionMade)
+        # Same thing for the variant pickers. Get a snack, you deserve it.
+        self._variantpicker = ttk.Combobox(master=self, values=[], state="disabled")
+        self._variantpicker.grid(row=1, column=1, padx=5, pady=5, sticky="nsew")
+        self._variantpicker.bind('<<ComboboxSelected>>', self.selectionMade)
 
-mainframe = tk.Frame(master=window, relief=tk.GROOVE, borderwidth=2)
-mainframe.grid()
+        # Generate numerical inputs. Their position to .grid() is offset by 2 to account for species and variant pickers.
+        for i, v in enumerate([self.amount, self.radius, self.hp]):
+            entry = tk.Entry(master=self, width=10, textvariable=v)
+            entry.grid(row=1, column=i+2, padx=5, pady=5)
 
-dropwidgets1=[]
-dropwidgets2=[]
-pathwidgets=[]
-boxwidgets=[]
-radiuswidgets=[]
-amountwidgets=[]
-healthwidgets=[]
-intvars=[]
+        # And one little checkbox for the aggro boolean.
+        box = ttk.Checkbutton(master=self, variable=self.aggro)
+        box.grid(row=1, column=5, padx=5, pady=5)
 
-def assignbind1(num):
-    dropwidgets1[num].bind('<<ComboboxSelected>>', lambda i : callback(num))
+    def selectionMade(self, e):
+        try:
+            if isinstance(ENEMYLIST[e.widget.get()], dict):
+                self._variantpicker['values'] = list(ENEMYLIST[e.widget.get()].keys())
+                self._variantpicker['state'] = "readonly"
+                self.fp.set("")
+            else:
+                self._variantpicker['values'] = None
+                self._variantpicker.set("")
+                self._variantpicker['state'] = "disabled"
+                self.fp.set(ENEMYLIST[self._speciespicker.get()])
+        except KeyError:
+            # Variants are not outlined, so KeyError means a variant was selected.
+            self.fp.set(ENEMYLIST[self._speciespicker.get()][self._variantpicker.get()])
 
-def assignbind2(num):
-    dropwidgets2[num].bind('<<ComboboxSelected>>', lambda i : filepath(num))
-
-for num in range(3):
-    num2 = num+1
-    alt = num+2
-    frame = tk.Frame(master=mainframe, relief=tk.GROOVE, borderwidth=2)
-    frame.grid(row=num, column=0, sticky="nsew")
-
-    #column 1, dropdown 1
-    label = tk.Label(master=frame, text="Enemy "+str(num))
-    dropdown = ttk.Combobox(master=frame, name="drop"+str(num), values=list(enemylist.keys()), state="readonly")
-    label.grid(row=0, column=0, padx=5, pady=5)
-    dropdown.grid(row=1, column=0, padx=5, pady=5, sticky="nsew")
-    dropdown.current(0)
-    dropwidgets1.append(dropdown)
-    assignbind1(num)
-
-    #column 2, path and dropdown 2
-    label2 = tk.Label(master=frame, name="filepath"+str(num), text="app:/OBJECT/GIANTANT01.SGO", width=40)
-    dropdown2 = ttk.Combobox(master=frame, name="drop2"+str(num), values=[], state="disabled")
-    label2.grid(row=0, column=1, padx=5, pady=5, sticky="nsew")
-    dropdown2.grid(row=1, column=1, padx=5, pady=5, sticky="nsew")
-    dropwidgets2.append(dropdown2)
-    pathwidgets.append(label2)
-    assignbind2(num)
-
-    #column 3, radius
-    label3 = tk.Label(master=frame, text="Radius")
-    entry = tk.Entry(master=frame, width=10)
-    entry.insert(0, "1.0f")
-    label3.grid(row=0, column=2, padx=5, pady=5)
-    entry.grid(row=1, column=2, padx=5, pady=5)
-    radiuswidgets.append(entry)
-
-    #column 4, amount
-    label4 = tk.Label(master=frame, text="Amount")
-    entry2 = tk.Entry(master=frame, width=10)
-    entry2.insert(0, 1)
-    label4.grid(row=0, column=3, padx=5, pady=5)
-    entry2.grid(row=1, column=3, padx=5, pady=5)
-    amountwidgets.append(entry2)
-
-    #column 5, health
-    label5 = tk.Label(master=frame, text="Health %")
-    entry3 = tk.Entry(master=frame, width=10)
-    entry3.insert(0, "1.0f")
-    label5.grid(row=0, column=4, padx=5, pady=5)
-    entry3.grid(row=1, column=4, padx=5, pady=5)
-    healthwidgets.append(entry3)
-
-    #column 6, aggro
-    label6 = tk.Label(master=frame, text="Aggro?")
-    isaggro = tk.IntVar()
-    intvars.append(isaggro)
-    box = ttk.Checkbutton(master=frame, variable=intvars[num], onvalue=1, offvalue=0)
-    boxwidgets.append(box)
-    label6.grid(row=0, column=5, padx=5, pady=5)
-    box.grid(row=1, column=5, padx=5, pady=5)
-
-
-
-def button():
-    values = {
-    "%SPAWN1RADIUSFLOAT%" : radiuswidgets[0].get(),
-    "%SPAWN1ENEMYSTRING%" : pathwidgets[0]['text'],
-    "%SPAWN1AMOUNTINT%" : amountwidgets[0].get(),
-    "%SPAWN1HEALTHFLOAT%" : healthwidgets[0].get(),
-    "%SPAWN1AGGROBOOL%" : intvars[0].get(),
-
-    "%SPAWN2RADIUSFLOAT%" : radiuswidgets[1].get(),
-    "%SPAWN2ENEMYSTRING%" : pathwidgets[1]['text'],
-    "%SPAWN2AMOUNTINT%" : amountwidgets[1].get(),
-    "%SPAWN2HEALTHFLOAT%" : healthwidgets[1].get(),
-    "%SPAWN2AGGROBOOL%" : intvars[1].get(),
-
-    "%SPAWN3RADIUSFLOAT%" : radiuswidgets[2].get(),
-    "%SPAWN3ENEMYSTRING%" : pathwidgets[2]['text'],
-    "%SPAWN3AMOUNTINT%" : amountwidgets[2].get(),
-    "%SPAWN3HEALTHFLOAT%" : healthwidgets[2].get(),
-    "%SPAWN3AGGROBOOL%" : intvars[2].get()
-    }
-    
-    global window2
+def popup(title, text, block):
+    def popupdestroy():
+        block['state'] = "normal"
+        window2.destroy()
     window2 = tk.Toplevel(master=mainframe)
-    window2.title = "Finished"
+    window2.title = title
     window2.resizable(width=False, height=False)
     x = window.winfo_x()
     y = window.winfo_y()
@@ -154,27 +93,56 @@ def button():
     window2.wm_transient(window)
     window2.grid()
     popupframe = tk.Frame(master=window2)
-    popuplabel = tk.Label(master=popupframe, text="Finished! Check the .exe's folder.")
+    popuplabel = tk.Label(master=popupframe, text=text)
     closebutton = tk.Button(master=popupframe, text="Close", relief=tk.GROOVE, borderwidth=5, command=popupdestroy)
-    confirm['state'] = "disabled"
+    block['state'] = "disabled"
     popupframe.grid(sticky="nsew")
     popuplabel.grid(row=0, column=0, sticky="nsew", padx=5, pady=5)
     closebutton.grid(row=1, column=0, sticky="nsew", padx=5, pady=5)
     window2.protocol("WM_DELETE_WINDOW", popupdestroy)
-    with open('dummy.txt', 'r', encoding="utf_16_be") as f:
-        source = f.read()
-        for key in values.keys():
-            source = source.replace(key, str(values[key]))
-    with open('MISSION.txt', 'w', encoding="utf_16_be") as f:
-        f.write(source)
-    p = Popen(["EDF Tools.exe", "MISSION.txt"], stdin=PIPE, shell=True)
-    p.communicate(input=b'\n')
 
-def popupdestroy():
-    confirm['state'] = "normal"
-    window2.destroy()
+if __name__ == "__main__":
+    window = tk.Tk()
+    window.title("Debug Room")
+    #window.minsize(720,800)
+    window.resizable(width=False, height=False)
 
-confirm = tk.Button(master=mainframe, text="Confirm", relief=tk.GROOVE, borderwidth=5, command=button)
-confirm.grid(row=6, column=0, sticky="nsew")
+    mainframe = tk.Frame(master=window, relief=tk.GROOVE, borderwidth=2)
+    mainframe.grid()
 
-window.mainloop()
+    ShootingTargets = []
+    for i in range(3):
+        frame = TargetConfiguration(master=mainframe, relief=tk.GROOVE, borderwidth=2)
+        frame.construct(i)
+        frame.grid(row=i, column=0, sticky="nsew")
+        ShootingTargets.append(frame)
+
+    def button():
+        string_replacements = {}
+        for index, ShootingTarget in enumerate(ShootingTargets):
+            string_replacements[f"%SPAWN{index}RADIUSFLOAT%"] = ShootingTarget.radius.get()
+            string_replacements[f"%SPAWN{index}ENEMYSTRING%"] = ShootingTarget.fp.get()
+            string_replacements[f"%SPAWN{index}AMOUNTINT%"] = int(ShootingTarget.amount.get())
+            string_replacements[f"%SPAWN{index}HEALTHFLOAT%"] = f"{ShootingTarget.health.get()}f"
+            string_replacements[f"%SPAWN{index}AGGROBOOL%"] = f"{ShootingTarget.aggro.get()}f"
+        
+        try:
+            with open('dummy.txt', 'r', encoding="utf_16_be") as f:
+                source = f.read()
+                for dummy, value in string_replacements.items():
+                    source = source.replace(dummy, str(value))
+        except FileNotFoundError:
+            popup("Error!", "dummy.txt not found.", confirm)
+        with open('MISSION.txt', 'w', encoding="utf_16_be") as f:
+            f.write(source)
+        if (os.path.isfile("EDF Tools.exe")):
+            p = Popen(["EDF Tools.exe", "MISSION.txt"], stdin=PIPE, shell=True)
+            popup("Complete!", "Mission file written.", confirm)
+            p.communicate(input=b'\n')
+        else:
+            popup("Error!", "Could not find EDF Tools.exe", confirm)
+
+    confirm = tk.Button(master=mainframe, text="Confirm", relief=tk.GROOVE, borderwidth=5, command=button)
+    confirm.grid(row=4, column=0, sticky="nsew")
+
+    window.mainloop()
