@@ -1,0 +1,104 @@
+{
+    "Black Ant" : "app:/OBJECT/GIANTANT01.SGO",
+    "AI Ranger" : {
+        "Ranger AF" : "app:/OBJECT/AIARMYSOLDIER_AF.SGO",
+        "Ranger AF_Leader" : "app:/OBJECT/AIARMYSOLDIER_AF_LEADER.SGO",
+        "Ranger FL" : "app:/OBJECT/AIARMYSOLDIER_FL.SGO",
+        "Ranger FL_Leader" : "app:/OBJECT/AIARMYSOLDIER_FL_LEADER.SGO",
+        "Ranger RL" : "app:/OBJECT/AIARMYSOLDIER_RL.SGO",
+        "Ranger RL_Leader" : "app:/OBJECT/AIARMYSOLDIER_RL_LEADER.SGO",
+        "Ranger S_AF_Leader" : "app:/OBJECT/AIARMYSOLDIER_S_AF_LEADER.SGO",
+        "Ranger S_Follower1" : "app:/OBJECT/AIARMYSOLDIER_S_FOLLOWER1.SGO",
+        "Ranger S_Follower2" : "app:/OBJECT/AIARMYSOLDIER_S_FOLLOWER2.SGO",
+        "Ranger S_Follower3" : "app:/OBJECT/AIARMYSOLDIER_S_FOLLOWER3.SGO",
+        "Ranger S_OMG_Srange" : "app:/OBJECT/AIARMYSOLDIER_S_OMG_LEADER.SGO",
+        "Ranger S_OMG_Srange_Leader" : "app:/OBJECT/AIARMYSOLDIER_S_OMG_SRANGE_LEADER.SGO",
+        "Ranger SG" : "app:/OBJECT/AIARMYSOLDIER_SG.SGO",
+        "Ranger SG_Leader" : "app:/OBJECT/AIARMYSOLDIER_SG_LEADER.SGO",
+        "Ranger SN" : "app:/OBJECT/AIARMYSOLDIER_SN.SGO",
+        "Ranger SN_Leader" : "app:/OBJECT/AIARMYSOLDIER_SN_LEADER.SGO",
+        "Security Guard" : "app:/OBJECT/AISECURITYGUARD",
+        "Player" : "app:/OBJECT/ARMYSOLDIER"
+    },
+    "AI Fencer" : {
+        "Fencer SC" : "app:/OBJECT/AIHEAVYARMOR_SC.SGO",
+        "Fencer SC_Leader" : "app:/OBJECT/AIHEAVYARMOR_SC_LEADER.SGO",
+        "Fencer SMC" : "app:/OBJECT/AIHEAVYARMOR_SMC.SGO",
+        "Fencer SMC_Leader" : "app:/OBJECT/AIHEAVYARMOR_SMC_LEADER.SGO",
+        "Fencer SP" : "app:/OBJECT/AIHEAVYARMOR_SP.SGO",
+        "Fencer SP_Leader" : "app:/OBJECT/AIHEAVYARMOR_SP_LEADER.SGO",
+        "Fencer SP_MobLeader" : "app:/OBJECT/AIHEAVYARMOR_SP_MOBLEADER.SGO",
+        "Fencer SSG" : "app:/OBJECT/AIHEAVYARMOR_SSG.SGO",
+        "Fencer SSG_Leader" : "app:/OBJECT/AIHEAVYARMOR_SSG_LEADER.SGO"
+    },
+    "AI Air Raider" : "app:/OBJECT/AIMAINTENANCE.SGO",
+    "AI Wing Diver" : {
+        "Wing Diver Elite_IZN" : "app:/OBJECT/AIPALEWING_ELITE_IZN.SGO",
+        "Wing Diver Elite_IZN_Leader" : "app:/OBJECT/AIPALEWING_ELITE_IZN_LEADER.SGO",
+        "Wing Diver Elite_Lance" : "app:/OBJECT/AIPALEWING_ELITE_LANCE.SGO",
+        "Wing Diver Elite_Lance_Leader" : "app:/OBJECT/AIPALEWING_ELITE_LANCE_LEADER.SGO",
+        "Wing Diver Elite_LR" : "app:/OBJECT/AIPALEWING_ELITE_LR.SGO",
+        "Wing Diver Elite_LR_Leader" : "app:/OBJECT/AIPALEWING_ELITE_LR_LEADER.SGO",
+        "Wing Diver IZN" : "app:/OBJECT/AIPALEWING_IZN.SGO",
+        "Wing Diver IZN_Leader" : "app:/OBJECT/AIPALEWING_IZN_LEADER.SGO",
+        "Wing Diver Lance" : "app:/OBJECT/AIPALEWING_LANCE.SGO",
+        "Wing Diver Lance_Leader" : "app:/OBJECT/AIPALEWING_LANCE_LEADER.SGO",
+        "Wing Diver LR" : "app:/OBJECT/AIPALEWING_LR.SGO",
+        "Wing Diver LR_Leader" : "app:/OBJECT/AIPALEWING_LR_LEADER.SGO",
+        "Wing Diver MS" : "app:/OBJECT/AIPALEWING_MS.SGO",
+        "Wing Diver MS_Leader" : "app:/OBJECT/AIPALEWING_MS_LEADER.SGO",
+        "Wing Diver TB" : "app:/OBJECT/AIPALEWING_TB.SGO",
+        "Wing Diver TB_Leader" : "app:/OBJECT/AIPALEWING_TB_LEADER.SGO"
+    },
+    "Alien (Cosmonaut)" : {
+        "Base Alien" : "app:/OBJECT/E506_BIGGREY_AF.SGO",
+        "LL?" : "app:/OBJECT/E506_BIGGREY_LL.SGO",
+        "leader" : "app:/OBJECT/E506_BIGGREY_AF_LEADER.SGO"
+    },
+    "Ant (Species α)" : "app:/OBJECT/GIANTANT01.SGO",
+    "Anchors" : {
+        "Generator" : "app:/OBJECT/E505_GENERATOR.SGO",
+        "Generator_Large" : "app:/OBJECT/E505_GENERATOR_LARGE.SGO",
+        "Generator_SuperLarge" : "app:/OBJECT/E505_GENERATOR_SUPERLARGE.SGO"
+    },
+    "Archelus" : "app:/OBJECT/E504_MONSTERA.SGO",
+    "Bombers" : { 
+        "Bomber401" : "app:/OBJECT/BOMBER401.SGO",
+        "Bomber501" : "app:/OBJECT/BOMBER501.SGO",
+        "Bomber501_2" : "app:/OBJECT/BOMBER501_2.SGO"
+    },
+    "Frog (Colonist)" : { 
+        "Base Frog" : "app:/OBJECT/E503_FROG_AF.SGO",
+        "Armored Frog" : "app:/OBJECT/E503_ARMORFROG_AF.SGO",
+        "Frog Leader" : "app:/OBJECT/E503_FROG_AF_LEADER.SGO",
+        "Armored Leader" : "app:/OBJECT/E503_ARMORFROG_AF_LEADER.SGO",
+        "Frog LC" : "app:/OBJECT/E503_FROG_LC.SGO",
+        "Armored LC" : "app:/OBJECT/E503_ARMORFROG_LC.SGO",
+        "Frog LC_Leader" : "app:/OBJECT/E503_FROG_LC_LEADER.SGO",
+        "Armored LC_Leader" : "app:/OBJECT/E503_ARMORFROG_LC_LEADER.SGO",
+        "Frog SG" : "app:/OBJECT/E503_ARMORFROG_SG.SGO",
+        "Armored SG" : "app:/OBJECT/E503_ARMORFROG_SG.SGO",
+        "Frog SG_Leader" : "app:/OBJECT/E503_ARMORFROG_SG_LEADER.SGO",
+        "Armored SG_Leader" : "app:/OBJECT/E503_ARMORFROG_SG_LEADER.SGO",
+        "Assault Frog" : "app:/OBJECT/E503_ASSAULT",
+        "Armor Assault" : "app:/OBJECT/E503_ARMOR_ASSAULT",
+        "Frog Launcher" : "app:/OBJECT/E503_LAUNCHER.SGO",
+        "Armor Launcher" : "app:/OBJECT/E503_ARMOR_LAUNCHER.SGO",
+        "Shotgun Frog" : "app:/OBJECT/E503_SHOTGUN.SGO",
+        "Armor Shotgun" : "app:/OBJECT/E503_ARMOR_SHOTGUN.SGO"
+    },
+    "Roly Poly (Species γ)" : "app:/OBJECT/E514_DANGO.SGO",
+    "Shield Bearer" : {
+        "Basic Shield Bearer" : "app:/OBJECT/E513_SHIELDBEARER.SGO",
+        "Large Shield Bearer" : "app:/OBJECT/E513_SHIELDBEARER_L.SGO",
+        "Extra Large Shield Bearer" : "app:/OBJECT/E513_SHIELDBEARER_XL.SGO",
+        "Basic Shield Bearer Static" : "app:/OBJECT/E513_SHIELDBEARER_FIXED.SGO",
+        "Large Shield Bearer Static" : "app:/OBJECT/E513_SHIELDBEARER_FIXEDL.SGO",
+        "Extra Large Shield Bearer Static" : "app:/OBJECT/E513_SHIELDBEARER_FIXEDXL.SGO"
+    },
+    "Spider (Species β)" : "app:/OBJECT/GIANTSPIDER01.SGO",
+    "Tadpoles" : { 
+        "Base Tadpoles" : "app:/OBJECT/DRAGONSMALL401.SGO",
+        "Blue Tadpole" : "app:/OBJECT/DRAGONSMALL401_HS.SGO"
+    }
+}
