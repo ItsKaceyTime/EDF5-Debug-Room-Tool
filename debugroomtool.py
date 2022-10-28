@@ -1,16 +1,10 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import SUNKEN, ttk
 from subprocess import Popen, PIPE
 window = tk.Tk()
 window.title("Debug Room")
 #window.minsize(720,800)
 window.resizable(width=False, height=False)
-
-labeltext = [
-    "enemy 1:",
-    "enemy 2:",
-    "enemy 3:"
-]
 
 enemylist = {
     "ant" : "app:/OBJECT/GIANTANT01.SGO",
@@ -20,17 +14,17 @@ enemylist = {
         "leader" : {"filepath" : "app:/OBJECT/E503_FROG_AF_LEADER.SGO"}
     },        
     "spider" : "app:/OBJECT/GIANTSPIDER01.SGO",
-    # "alien" : {
-    #     "basealien" : {"filepath" : "app:/OBJECT/E506_BIGGREY_AF.SGO"},
-    #     "LL?" : {"filepath" : "app:/OBJECT/E506_BIGGREY_LL.SGO"},
-    #     "leader" : {"filepath" : "app:/OBJECT/E506_BIGGREY_AF_LEADER.SGO"}
-    # }
+    "alien" : {
+        "basealien" : {"filepath" : "app:/OBJECT/E506_BIGGREY_AF.SGO"},
+        "LL?" : {"filepath" : "app:/OBJECT/E506_BIGGREY_LL.SGO"},
+        "leader" : {"filepath" : "app:/OBJECT/E506_BIGGREY_AF_LEADER.SGO"}
+    }
 }
 
-def callback(i,r):
-    drop = variables[i]
-    drop2 = variables[i+1]
-    path = variables[i+2]
+def callback(i):
+    drop = dropwidgets1[i]
+    drop2 = dropwidgets2[i]
+    path = pathwidgets[i]
 
     if type(enemylist[drop.get()]) is dict:
         path.config(text = "")
@@ -41,175 +35,113 @@ def callback(i,r):
         drop2.set("")
         drop2['state'] = "disabled"
         path.config(text = enemylist[drop.get()])
-        path.grid(row=r, column=1, padx=10, pady=10, sticky="nsew")
+        path.update()
 
-def filepath(i,r):
-    drop = variables[i]
-    drop2 = variables[i+1]
-    path = variables[i+2]
+def filepath(i):
+    drop = dropwidgets1[i]
+    drop2 = dropwidgets2[i]
+    path = pathwidgets[i]
 
     path.config(text = enemylist[drop.get()][drop2.get()]["filepath"])
-    path.grid(row=r, column=1, padx=10, pady=10)
+    path.update()
 
 
 mainframe = tk.Frame(master=window, relief=tk.GROOVE, borderwidth=2)
 mainframe.grid()
 
-enemy1frame = tk.Frame(master=mainframe, relief=tk.GROOVE, borderwidth=2)
-enemy1frame.grid(row=0,column=0, sticky="nsew")
-enemy1label = tk.Label(master=enemy1frame, text=labeltext[0])
-enemy1label.grid(row=0, column=0, pady=10)
+dropwidgets1=[]
+dropwidgets2=[]
+pathwidgets=[]
+boxwidgets=[]
+radiuswidgets=[]
+amountwidgets=[]
+healthwidgets=[]
+intvars=[]
 
-enemy2frame = tk.Frame(master=mainframe, relief=tk.GROOVE, borderwidth=2)
-enemy2frame.grid(row=2, column=0, sticky="nsew")
-enemy2label = tk.Label(master=enemy2frame, text=labeltext[1])
-enemy2label.grid(row=2, column=0, pady=10)
+def assignbind1(num):
+    dropwidgets1[num].bind('<<ComboboxSelected>>', lambda i : callback(num))
 
-enemy3frame = tk.Frame(master=mainframe, relief=tk.GROOVE, borderwidth=2)
-enemy3frame.grid(row=4, column=0, sticky="nsew")
-enemy3label = tk.Label(master=enemy3frame, text=labeltext[2])
-enemy3label.grid(row=4, column=0, pady=10)
+def assignbind2(num):
+    dropwidgets2[num].bind('<<ComboboxSelected>>', lambda i : filepath(num))
 
-enemydrop1a = ttk.Combobox(master=enemy1frame, values=list(enemylist.keys()), state="readonly")
-enemydrop1a.current(0)
-enemydrop1b = ttk.Combobox(master=enemy1frame, values=[], state="disabled")
-enemy1path = tk.Label(master=enemy1frame, text="app:/OBJECT/GIANTANT01.SGO")
-enemy1radius = tk.Entry(master=enemy1frame, width=10)
-enemy1radius.insert(0, "1.0f")
-enemy1radiuslabel = tk.Label(master=enemy1frame, text="Radius")
-enemy1amount = tk.Entry(master=enemy1frame, width=10)
-enemy1amount.insert(0, "1")
-enemy1amountlabel = tk.Label(master=enemy1frame, text="Amount")
-enemy1health = tk.Entry(master=enemy1frame, width=10)
-enemy1health.insert(0, "1.0f")
-enemy1healthlabel = tk.Label(master=enemy1frame, text="Health %")
-isaggro1 = tk.IntVar()
-enemy1aggro = ttk.Checkbutton(master=enemy1frame, variable=isaggro1, onvalue=1, offvalue=0)
-enemy1aggrolabel = tk.Label(master=enemy1frame, text="Aggro?")
+for num in range(3):
+    num2 = num+1
+    alt = num+2
+    frame = tk.Frame(master=mainframe, relief=tk.GROOVE, borderwidth=2)
+    frame.grid(row=num, column=0, sticky="nsew")
 
-enemydrop2a = ttk.Combobox(master=enemy2frame, values=list(enemylist.keys()), state="readonly")
-enemydrop2a.current(0)
-enemydrop2b = ttk.Combobox(master=enemy2frame, values=[], state="disabled")
-enemy2path = tk.Label(master=enemy2frame, text="app:/OBJECT/GIANTANT01.SGO")
-enemy2radius = tk.Entry(master=enemy2frame, width=10)
-enemy2radius.insert(0, "1.0f")
-enemy2radiuslabel = tk.Label(master=enemy2frame, text="Radius")
-enemy2amount = tk.Entry(master=enemy2frame, width=10)
-enemy2amount.insert(0, "1")
-enemy2amountlabel = tk.Label(master=enemy2frame, text="Amount")
-enemy2health = tk.Entry(master=enemy2frame, width=10)
-enemy2health.insert(0, "1.0f")
-enemy2healthlabel = tk.Label(master=enemy2frame, text="Health %")
-isaggro2 = tk.IntVar()
-enemy2aggro = ttk.Checkbutton(master=enemy2frame, variable=isaggro2, onvalue=1, offvalue=0)
-enemy2aggrolabel = tk.Label(master=enemy2frame, text="Aggro?")
+    #column 1, dropdown 1
+    label = tk.Label(master=frame, text="Enemy "+str(num))
+    dropdown = ttk.Combobox(master=frame, name="drop"+str(num), values=list(enemylist.keys()), state="readonly")
+    label.grid(row=0, column=0, padx=5, pady=5)
+    dropdown.grid(row=1, column=0, padx=5, pady=5, sticky="nsew")
+    dropdown.current(0)
+    dropwidgets1.append(dropdown)
+    assignbind1(num)
 
-enemydrop3a = ttk.Combobox(master=enemy3frame, values=list(enemylist.keys()), state="readonly")
-enemydrop3a.current(0)
-enemydrop3b = ttk.Combobox(master=enemy3frame, values=[], state="disabled")
-enemy3path = tk.Label(master=enemy3frame, text="app:/OBJECT/GIANTANT01.SGO")
-enemy3radius = tk.Entry(master=enemy3frame, width=10)
-enemy3radius.insert(0, "1.0f")
-enemy3radiuslabel = tk.Label(master=enemy3frame, text="Radius")
-enemy3amount = tk.Entry(master=enemy3frame, width=10)
-enemy3amount.insert(0, "1")
-enemy3amountlabel = tk.Label(master=enemy3frame, text="Amount")
-enemy3health = tk.Entry(master=enemy3frame, width=10)
-enemy3health.insert(0, "1.0f")
-enemy3healthlabel = tk.Label(master=enemy3frame, text="Health %")
-isaggro3 = tk.IntVar()
-enemy3aggro = ttk.Checkbutton(master=enemy3frame, variable=isaggro3, onvalue=1, offvalue=0)
-enemy3aggrolabel = tk.Label(master=enemy3frame, text="Aggro?")
+    #column 2, path and dropdown 2
+    label2 = tk.Label(master=frame, name="filepath"+str(num), text="app:/OBJECT/GIANTANT01.SGO", width=40)
+    dropdown2 = ttk.Combobox(master=frame, name="drop2"+str(num), values=[], state="disabled")
+    label2.grid(row=0, column=1, padx=5, pady=5, sticky="nsew")
+    dropdown2.grid(row=1, column=1, padx=5, pady=5, sticky="nsew")
+    dropwidgets2.append(dropdown2)
+    pathwidgets.append(label2)
+    assignbind2(num)
 
-variables = [
-    enemydrop1a,
-    enemydrop1b,
-    enemy1path,
-    enemydrop2a,
-    enemydrop2b,
-    enemy2path,
-    enemydrop3a,
-    enemydrop3b,
-    enemy3path
-    ]
+    #column 3, radius
+    label3 = tk.Label(master=frame, text="Radius")
+    entry = tk.Entry(master=frame, width=10)
+    entry.insert(0, "1.0f")
+    label3.grid(row=0, column=2, padx=5, pady=5)
+    entry.grid(row=1, column=2, padx=5, pady=5)
+    radiuswidgets.append(entry)
 
-enemydrop1a.bind('<<ComboboxSelected>>', lambda i : callback(0,0))
-enemydrop1b.bind('<<ComboboxSelected>>', lambda i : filepath(0,0))
+    #column 4, amount
+    label4 = tk.Label(master=frame, text="Amount")
+    entry2 = tk.Entry(master=frame, width=10)
+    entry2.insert(0, 1)
+    label4.grid(row=0, column=3, padx=5, pady=5)
+    entry2.grid(row=1, column=3, padx=5, pady=5)
+    amountwidgets.append(entry2)
 
-enemydrop2a.bind('<<ComboboxSelected>>', lambda i : callback(3,2))
-enemydrop2b.bind('<<ComboboxSelected>>', lambda i : filepath(3,2))
+    #column 5, health
+    label5 = tk.Label(master=frame, text="Health %")
+    entry3 = tk.Entry(master=frame, width=10)
+    entry3.insert(0, "1.0f")
+    label5.grid(row=0, column=4, padx=5, pady=5)
+    entry3.grid(row=1, column=4, padx=5, pady=5)
+    healthwidgets.append(entry3)
 
-enemydrop3a.bind('<<ComboboxSelected>>', lambda i : callback(6,4))
-enemydrop3b.bind('<<ComboboxSelected>>', lambda i : filepath(6,4))
+    #column 6, aggro
+    label6 = tk.Label(master=frame, text="Aggro?")
+    isaggro = tk.IntVar()
+    intvars.append(isaggro)
+    box = ttk.Checkbutton(master=frame, variable=intvars[num], onvalue=1, offvalue=0)
+    boxwidgets.append(box)
+    label6.grid(row=0, column=5, padx=5, pady=5)
+    box.grid(row=1, column=5, padx=5, pady=5)
 
-enemydrop1a.grid(row=1, column=0, padx=10, pady=10, sticky="nsew")
-enemydrop1b.grid(row=1, column=1, padx=10, pady=10, sticky="nsew")
-enemy1path.grid(row=0, column=1, padx=10, pady=10, sticky="nsew")
-enemy1radius.grid(row=1, column=2, padx=10)
-enemy1radiuslabel.grid(row=0, column=2, padx=10)
-enemy1amount.grid(row=1, column=3, padx=10)
-enemy1amountlabel.grid(row=0, column=3, padx=10)
-enemy1health.grid(row=1, column=4, padx=10)
-enemy1healthlabel.grid(row=0, column=4, padx=10)
-enemy1aggro.grid(row=1, column=5, padx=10)
-enemy1aggrolabel.grid(row=0, column=5, padx=10)
 
-enemydrop2a.grid(row=3, column=0, padx=10, pady=10, sticky="nsew")
-enemydrop2b.grid(row=3, column=1, padx=10, pady=10, sticky="nsew")
-enemy2path.grid(row=2, column=1, padx=10, pady=10, sticky="nsew")
-enemy2radius.grid(row=3, column=2, padx=10)
-enemy2radiuslabel.grid(row=2, column=2, padx=10)
-enemy2amount.grid(row=3, column=3, padx=10)
-enemy2amountlabel.grid(row=2, column=3, padx=10)
-enemy2health.grid(row=3, column=4, padx=10)
-enemy2healthlabel.grid(row=2, column=4, padx=10)
-enemy2aggro.grid(row=3, column=5, padx=10)
-enemy2aggrolabel.grid(row=2, column=5, padx=10)
-
-enemydrop3a.grid(row=5, column=0, padx=10, pady=10, sticky="nsew")
-enemydrop3b.grid(row=5, column=1, padx=10, pady=10, sticky="nsew")
-enemy3path.grid(row=4, column=1, padx=10, pady=10, sticky="nsew")
-enemy3radius.grid(row=5, column=2, padx=10)
-enemy3radiuslabel.grid(row=4, column=2, padx=10)
-enemy3amount.grid(row=5, column=3, padx=10)
-enemy3amountlabel.grid(row=4, column=3, padx=10)
-enemy3health.grid(row=5, column=4, padx=10)
-enemy3healthlabel.grid(row=4, column=4, padx=10)
-enemy3aggro.grid(row=5, column=5, padx=10)
-enemy3aggrolabel.grid(row=4, column=5, padx=10)
 
 def button():
-    if isaggro1.get() == 1:
-        aggro1="1"
-    else:
-        aggro1="0"
-    if isaggro2.get() == 1:
-        aggro2="1"
-    else:
-        aggro2="0"
-    if isaggro3.get() == 1:
-        aggro3="1"
-    else:
-        aggro3="0"
-
     values = {
-    "%SPAWN1RADIUSFLOAT%" : enemy1radius.get(),
-    "%SPAWN1ENEMYSTRING%" : enemy1path['text'],
-    "%SPAWN1AMOUNTINT%" : enemy1amount.get(),
-    "%SPAWN1HEALTHFLOAT%" : enemy1health.get(),
-    "%SPAWN1AGGROBOOL%" : aggro1,
+    "%SPAWN1RADIUSFLOAT%" : radiuswidgets[0].get(),
+    "%SPAWN1ENEMYSTRING%" : pathwidgets[0]['text'],
+    "%SPAWN1AMOUNTINT%" : amountwidgets[0].get(),
+    "%SPAWN1HEALTHFLOAT%" : healthwidgets[0].get(),
+    "%SPAWN1AGGROBOOL%" : intvars[0].get(),
 
-    "%SPAWN2RADIUSFLOAT%" : enemy2radius.get(),
-    "%SPAWN2ENEMYSTRING%" : enemy2path['text'],
-    "%SPAWN2AMOUNTINT%" : enemy2amount.get(),
-    "%SPAWN2HEALTHFLOAT%" : enemy2health.get(),
-    "%SPAWN2AGGROBOOL%" : aggro2,
+    "%SPAWN2RADIUSFLOAT%" : radiuswidgets[1].get(),
+    "%SPAWN2ENEMYSTRING%" : pathwidgets[1]['text'],
+    "%SPAWN2AMOUNTINT%" : amountwidgets[1].get(),
+    "%SPAWN2HEALTHFLOAT%" : healthwidgets[1].get(),
+    "%SPAWN2AGGROBOOL%" : intvars[1].get(),
 
-    "%SPAWN3RADIUSFLOAT%" : enemy3radius.get(),
-    "%SPAWN3ENEMYSTRING%" : enemy3path['text'],
-    "%SPAWN3AMOUNTINT%" : enemy3amount.get(),
-    "%SPAWN3HEALTHFLOAT%" : enemy3health.get(),
-    "%SPAWN3AGGROBOOL%" : aggro3
+    "%SPAWN3RADIUSFLOAT%" : radiuswidgets[2].get(),
+    "%SPAWN3ENEMYSTRING%" : pathwidgets[2]['text'],
+    "%SPAWN3AMOUNTINT%" : amountwidgets[2].get(),
+    "%SPAWN3HEALTHFLOAT%" : healthwidgets[2].get(),
+    "%SPAWN3AGGROBOOL%" : intvars[2].get()
     }
     
     global window2
@@ -232,7 +164,7 @@ def button():
     with open('dummy.txt', 'r', encoding="utf_16_be") as f:
         source = f.read()
         for key in values.keys():
-            source = source.replace(key, values[key])
+            source = source.replace(key, str(values[key]))
     with open('MISSION.txt', 'w', encoding="utf_16_be") as f:
         f.write(source)
     p = Popen(["EDF Tools.exe", "MISSION.txt"], stdin=PIPE, shell=True)
