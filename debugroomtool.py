@@ -1,22 +1,11 @@
 import os.path
+import json
 import tkinter as tk
 from tkinter import SUNKEN, ttk
 from subprocess import Popen, PIPE
 
-ENEMYLIST = {
-    "ant" : "app:/OBJECT/GIANTANT01.SGO",
-    "frog" : { 
-        "basefrog" : "app:/OBJECT/E503_FROG_AF.SGO",
-        "armor" : "app:/OBJECT/E503_ARMORFROG_AF.SGO",
-        "leader" : "app:/OBJECT/E503_FROG_AF_LEADER.SGO",
-    },        
-    "spider" : "app:/OBJECT/GIANTSPIDER01.SGO",
-    "alien" : {
-        "basealien" : "app:/OBJECT/E506_BIGGREY_AF.SGO",
-        "LL?" :  "app:/OBJECT/E506_BIGGREY_LL.SGO",
-        "leader" :  "app:/OBJECT/E506_BIGGREY_AF_LEADER.SGO",
-    }
-}
+with open("enemylist.json", "r") as f:
+    ENEMYLIST = json.load(f)
 
 class TargetConfiguration(tk.Frame):
     def __init__(self, **kwargs):
@@ -37,7 +26,7 @@ class TargetConfiguration(tk.Frame):
         self.radius = tk.StringVar(self, "1.0")
         self.hp = tk.StringVar(self, "1.0")
         self.aggro = tk.StringVar(self, "1.0")
-        self.aggro = tk.IntVar(0)
+        self.aggro = tk.IntVar(self, 0)
 
         # Generate labels in order; the 2nd one needs special treatment :<
         for i, t in enumerate([f"Enemy {num}", "", "Radius", "Amount", "Health", "Aggro"]):
