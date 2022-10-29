@@ -2,37 +2,34 @@
     "AI Ranger" : {
         "Ranger AF" : "app:/OBJECT/AIARMYSOLDIER_AF.SGO",
         "Ranger AF_Leader" : "app:/OBJECT/AIARMYSOLDIER_AF_LEADER.SGO",
-        "Ranger FL" : "app:/OBJECT/AIARMYSOLDIER_FL.SGO",
-        "Ranger FL_Leader" : "app:/OBJECT/AIARMYSOLDIER_FL_LEADER.SGO",
-        "Ranger RL" : "app:/OBJECT/AIARMYSOLDIER_RL.SGO",
-        "Ranger RL_Leader" : "app:/OBJECT/AIARMYSOLDIER_RL_LEADER.SGO",
-        "Ranger S_AF_Leader" : "app:/OBJECT/AIARMYSOLDIER_S_AF_LEADER.SGO",
+        "Ranger FlameL" : "app:/OBJECT/AIARMYSOLDIER_FL.SGO",
+        "Ranger FlameL_Leader" : "app:/OBJECT/AIARMYSOLDIER_FL_LEADER.SGO",
+        "Ranger RocketL" : "app:/OBJECT/AIARMYSOLDIER_RL.SGO",
+        "Ranger RocketL_Leader" : "app:/OBJECT/AIARMYSOLDIER_RL_LEADER.SGO",
+        "Sarge" : "app:/OBJECT/AIARMYSOLDIER_S_AF_LEADER.SGO",
         "Ranger S_Follower1" : "app:/OBJECT/AIARMYSOLDIER_S_FOLLOWER1.SGO",
         "Ranger S_Follower2" : "app:/OBJECT/AIARMYSOLDIER_S_FOLLOWER2.SGO",
         "Ranger S_Follower3" : "app:/OBJECT/AIARMYSOLDIER_S_FOLLOWER3.SGO",
-        "Ranger S_OMG_Srange" : "app:/OBJECT/AIARMYSOLDIER_S_OMG_LEADER.SGO",
-        "Ranger S_OMG_Srange_Leader" : "app:/OBJECT/AIARMYSOLDIER_S_OMG_SRANGE_LEADER.SGO",
-        "Ranger SG" : "app:/OBJECT/AIARMYSOLDIER_SG.SGO",
-        "Ranger SG_Leader" : "app:/OBJECT/AIARMYSOLDIER_SG_LEADER.SGO",
-        "Ranger SN" : "app:/OBJECT/AIARMYSOLDIER_SN.SGO",
-        "Ranger SN_Leader" : "app:/OBJECT/AIARMYSOLDIER_SN_LEADER.SGO",
-        "Security Guard" : "app:/OBJECT/AISECURITYGUARD",
-        "Player" : "app:/OBJECT/ARMYSOLDIER"
+        "Sarge with BLazer" : "app:/OBJECT/AIARMYSOLDIER_S_OMG_LEADER.SGO",
+        "Recruit-able Sarge with BLazer" : "app:/OBJECT/AIARMYSOLDIER_S_OMG_SRANGE_LEADER.SGO",
+        "Ranger ShotGun" : "app:/OBJECT/AIARMYSOLDIER_SG.SGO",
+        "Ranger ShotGun_Leader" : "app:/OBJECT/AIARMYSOLDIER_SG_LEADER.SGO",
+        "Ranger Sniper" : "app:/OBJECT/AIARMYSOLDIER_SN.SGO",
+        "Ranger Sniper_Leader" : "app:/OBJECT/AIARMYSOLDIER_SN_LEADER.SGO"
     },
     "AI Fencer" : {
-        "Fencer SC" : "app:/OBJECT/AIHEAVYARMOR_SC.SGO",
-        "Fencer SC_Leader" : "app:/OBJECT/AIHEAVYARMOR_SC_LEADER.SGO",
-        "Fencer SMC" : "app:/OBJECT/AIHEAVYARMOR_SMC.SGO",
-        "Fencer SMC_Leader" : "app:/OBJECT/AIHEAVYARMOR_SMC_LEADER.SGO",
-        "Fencer SP" : "app:/OBJECT/AIHEAVYARMOR_SP.SGO",
-        "Fencer SP_Leader" : "app:/OBJECT/AIHEAVYARMOR_SP_LEADER.SGO",
-        "Fencer SP_MobLeader" : "app:/OBJECT/AIHEAVYARMOR_SP_MOBLEADER.SGO",
-        "Fencer SSG" : "app:/OBJECT/AIHEAVYARMOR_SSG.SGO",
-        "Fencer SSG_Leader" : "app:/OBJECT/AIHEAVYARMOR_SSG_LEADER.SGO"
+        "Brown Fencer " : "app:/OBJECT/AIHEAVYARMOR_SC.SGO",
+        "Brown Fencer Leader" : "app:/OBJECT/AIHEAVYARMOR_SC_LEADER.SGO",
+        "Blue & Cyan Fencer" : "app:/OBJECT/AIHEAVYARMOR_SMC.SGO",
+        "Blue & Cyan Fencer Leader" : "app:/OBJECT/AIHEAVYARMOR_SMC_LEADER.SGO",
+        "Red & Orange Fencer" : "app:/OBJECT/AIHEAVYARMOR_SSG.SGO",
+        "Red & Orange Fencer Leader" : "app:/OBJECT/AIHEAVYARMOR_SSG_LEADER.SGO",
+        "Grim Reaper" : "app:/OBJECT/AIHEAVYARMOR_SP.SGO",
+        "Grim Reaper_Leader" : "app:/OBJECT/AIHEAVYARMOR_SP_LEADER.SGO",
+        "Grim Reaper_MobLeader" : "app:/OBJECT/AIHEAVYARMOR_SP_MOBLEADER.SGO"
     },
     "AI Air Raider" : "app:/OBJECT/AIMAINTENANCE.SGO",
     "AI Wing Diver" : {
-        "Wing Diver Elite_IZN" : "app:/OBJECT/AIPALEWING_ELITE_IZN.SGO",
         "Wing Diver Elite_IZN_Leader" : "app:/OBJECT/AIPALEWING_ELITE_IZN_LEADER.SGO",
         "Wing Diver Elite_Lance" : "app:/OBJECT/AIPALEWING_ELITE_LANCE.SGO",
         "Wing Diver Elite_Lance_Leader" : "app:/OBJECT/AIPALEWING_ELITE_LANCE_LEADER.SGO",
@@ -42,8 +39,8 @@
         "Wing Diver IZN_Leader" : "app:/OBJECT/AIPALEWING_IZN_LEADER.SGO",
         "Wing Diver Lance" : "app:/OBJECT/AIPALEWING_LANCE.SGO",
         "Wing Diver Lance_Leader" : "app:/OBJECT/AIPALEWING_LANCE_LEADER.SGO",
-        "Wing Diver LR" : "app:/OBJECT/AIPALEWING_LR.SGO",
-        "Wing Diver LR_Leader" : "app:/OBJECT/AIPALEWING_LR_LEADER.SGO",
+        "Wing Diver Lazer Rifle" : "app:/OBJECT/AIPALEWING_LR.SGO",
+        "Wing Diver Lazer Rifle_Leader" : "app:/OBJECT/AIPALEWING_LR_LEADER.SGO",
         "Wing Diver MS" : "app:/OBJECT/AIPALEWING_MS.SGO",
         "Wing Diver MS_Leader" : "app:/OBJECT/AIPALEWING_MS_LEADER.SGO",
         "Wing Diver TB" : "app:/OBJECT/AIPALEWING_TB.SGO",
@@ -74,12 +71,20 @@
     },
     "Ant (Species α)" : {
         "Black Ant" : "app:/OBJECT/GIANTANT01.SGO",
-        "Red Ant" : "app:/OBJECT/GIANTANT01.SGO"
+        "No Acid Ant" : "app:/OBJECT/GIANTANT02B.SGO",
+        "Red Ant" : "app:/OBJECT/GIANTANT01B.SGO",
+        "Crimson Ant" : "app:/OBJECT/GIANTANT03B.SGO",
+        "Green Ant" : "app:/OBJECT/GIANTANT04.SGO",
+        "Small Green Ant" : "app:/OBJECT/GIANTANT04SB.SGO",
+        "Gold Ant" : "app:/OBJECT/GOLDANT.SGO",
+        "Queen Ant" : "app:/OBJECT/GIANTANTQUEEN.SGO",
+        "Gold Queen Ant" : "app:/OBJECT/GOLDANTQUEEN.SGO"
     },
     "Anchors" : {
-        "Generator" : "app:/OBJECT/E505_GENERATOR.SGO",
-        "Generator_Large" : "app:/OBJECT/E505_GENERATOR_LARGE.SGO",
-        "Generator_SuperLarge" : "app:/OBJECT/E505_GENERATOR_SUPERLARGE.SGO"
+        "Anchor" : "app:/OBJECT/E505_GENERATOR.SGO",
+        "Large Anchor" : "app:/OBJECT/E505_GENERATOR_LARGE.SGO",
+        "SuperLarge Anchor" : "app:/OBJECT/E505_GENERATOR_SUPERLARGE.SGO",
+        "Underground Anchor" : "app:/OBJECT/E517_ANTHILL"
     },
     "Archelus" : "app:/OBJECT/E504_MONSTERA.SGO",
     "Bombers" : { 
@@ -88,14 +93,34 @@
         "Bomber501_2" : "app:/OBJECT/BOMBER501_2.SGO"
     },
     "Carrier" : "app:/OBJECT/E508_CARRIER.SGO",
-    "Deiroi" : { 
-        "Basic Deiroi" : "app:/OBJECT/E509_DEIROI.SGO",
-        "Deiroi SM" : "app:/OBJECT/E509_DEIROI_SM.SGO",
-        "Deiroi Medium" : "app:/OBJECT/E509_DEIROI_M.SGO",
-        "Deiroi Large" : "app:/OBJECT/E509_DEIROI_L.SGO",
-        "Deiroi Extra Large" : "app:/OBJECT/E509_DEIROI_XL.SGO"
+    "Deroy" : { 
+        "Basic Deroy" : "app:/OBJECT/E509_DEIROI.SGO",
+        "Deroy SM" : "app:/OBJECT/E509_DEIROI_SM.SGO",
+        "Deroy Medium" : "app:/OBJECT/E509_DEIROI_M.SGO",
+        "Deroy Large" : "app:/OBJECT/E509_DEIROI_L.SGO",
+        "Deroy Extra Large" : "app:/OBJECT/E509_DEIROI_XL.SGO"
     },
-    "Humanoid Dropboat" : "app:/OBJECT/E512_DROPBOAT",
+    "Erginus" : {
+        "Child (Blue)" : "app:/OBJECT/MONSTER501.SGO",
+        "Adult (Orange)" : "app:/OBJECT/MONSTER501_KING.SGO"
+    },
+    "Giant Ant Eggs" : {
+        "Normal Ant Egg" : "app:/OBJECT/GIANTANT01EGG.SGO",
+        "Normal Ant Egg 2" : "app:/OBJECT/GIANTANT01EGGB.SGO",
+        "Red Ant Egg" : "app:/OBJECT/GIANTANT02BEGG.SGO",
+        "Red Ant Egg 2" : "app:/OBJECT/GIANTANT02BEGGB.SGO",
+        "Gold Ant Egg" : "app:/OBJECT/GOLDANTEGG.SGO",
+        "Gold Ant Egg 2" : "app:/OBJECT/GOLDANTEGGB.SGO"
+    },
+    "Hornet (Flying-type)" : {
+        "Base Hornet" : "app:/OBJECT/GIANTBEE01.SGO",
+        "Charge Hornet?" : "app:/OBJECT/GIANTBEE01CHARGE.SGO",
+        "Red Hornet" : "app:/OBJECT/GIANTBEE02CHARGE.SGO",
+        "Queen Hornet" : "app:/OBJECT/GIANTBEEQUEEN.SGO",
+        "Red Queen Hornet" : "app:/OBJECT/GIANTBEEQUEEN02.SGO"
+    },
+    "Hornet Nest" : "app:/OBJECT/HORNETNEST401.SGO",
+    "Humanoid Dropboat" : "app:/OBJECT/E512_DROPBOAT.SGO",
     "Fortress" : "app:/OBJECT/E510_FORTRESS.SGO",
     "Frog (Colonist)" : { 
         "Base Frog" : "app:/OBJECT/E503_FROG_AF.SGO",
@@ -120,10 +145,10 @@
     "GOD" : "app:/OBJECT/E516_BIGGREYBOSS.SGO",
     "Gold UFO" : {
         "Base UFO" : "app:/OBJECT/E507_GOLDUFO.SGO",
-        "Ace UFO" : "app:/OBJECT/E507_GOLDUFO_ACE.SGO",
-        "Big UFO" : "app:/OBJECT/E507_GOLDUFO_BIG.SGO",
-        "Charge UFO" : "app:/OBJECT/E507_GOLDUFO_CHARGE.SGO",
-        "HI UFO" : "app:/OBJECT/E507_GOLDUFO_HI.SGO",
+        "Stun Lazer UFO" : "app:/OBJECT/E507_GOLDUFO_CHARGE.SGO",
+        "Higher level UFO" : "app:/OBJECT/E507_GOLDUFO_HI.SGO",
+        "RED UFO" : "app:/OBJECT/E507_GOLDUFO_ACE.SGO",
+        "DLC UFO" : "app:/OBJECT/E507_GOLDUFO_BIG.SGO",
         "Imperial UFO" : "app:/OBJECT/E515_IMPERIALUFO",
         "Imperial UFO Ace" : "app:/OBJECT/E515_IMPERIALUFO_ACE"
 
@@ -132,6 +157,7 @@
         "Mothership" :"app:/OBJECT/E511_MOTHERSHIP.SGO",
         "DLC Mothership" :"app:/OBJECT/E511_MOTHERSHIP_DLC.SGO"
     },
+    "Aranea" : "app:/OBJECT/NEPHILA.SGO",
     "Roly Poly (Species γ)" : "app:/OBJECT/E514_DANGO.SGO",
     "Shield Bearer" : {
         "Basic Shield Bearer" : "app:/OBJECT/E513_SHIELDBEARER.SGO",
@@ -141,9 +167,26 @@
         "Large Shield Bearer Static" : "app:/OBJECT/E513_SHIELDBEARER_FIXEDL.SGO",
         "Extra Large Shield Bearer Static" : "app:/OBJECT/E513_SHIELDBEARER_FIXEDXL.SGO"
     },
-    "Spider (Species β)" : "app:/OBJECT/GIANTSPIDER01.SGO",
+    "Spider (Species β)" : {
+        "Spider" : "app:/OBJECT/GIANTSPIDER01.SGO",
+        "Spider King" : "app:/OBJECT/GIANTSPIDERQUEEN.SGO",
+        "Silver Spider" : "app:/OBJECT/SILVERSPIDER.SGO",
+        "Silver Spider King" : "app:/OBJECT/SILVERSPIDERQUEEN.SGO"
+},
+    "Shooting Target" : "app:/OBJECT/SHOOTINGTARGET.SGO",
     "Tadpoles" : { 
-        "Base Tadpoles" : "app:/OBJECT/DRAGONSMALL401.SGO",
-        "Blue Tadpole" : "app:/OBJECT/DRAGONSMALL401_HS.SGO"
+        "Base Tadpole" : "app:/OBJECT/DRAGONSMALL401.SGO",
+        "Base HS Tadpole" : "app:/OBJECT/DRAGONSMALL401_HS.SGO",
+        "Blue Tadpole" : "app:/OBJECT/REDSMALLDRAGON.SGO",
+        "Blue HS Tadpole" : "app:/OBJECT/REDSMALLDRAGON_HS.SGO",
+        "Small Yellow Tadpole" : "app:/OBJECT/YERROWSMALLDRAGON.SGO",
+        "Small Yellow HS Tadpole" : "app:/OBJECT/YERROWSMALLDRAGON_HS.SGO"
+    },
+    "War Crimes" : {
+        "Man 01" :"app:/OBJECT/MAN01.SGO",
+        "Man 02" :"app:/OBJECT/MAN02.SGO",
+        "Man 03" :"app:/OBJECT/MAN03.SGO",
+        "Woman 01" : "app:/OBJECT/WOMAN01.SGO",
+        "Woman 02" : "app:/OBJECT/WOMAN02.SGO"
     }
 }
