@@ -1,7 +1,8 @@
 import os.path
 import json
+import shutil
 import tkinter as tk
-from tkinter import SUNKEN, ttk
+from tkinter import SUNKEN, ttk, filedialog
 from subprocess import Popen, PIPE
 
 with open("enemylist.json", "r") as f:
@@ -125,13 +126,24 @@ if __name__ == "__main__":
         with open('MISSION.txt', 'w', encoding="utf_16_be") as f:
             f.write(source)
         if (os.path.isfile("EDF Tools.exe")):
-            p = Popen(["EDF Tools.exe", "MISSION.txt"], stdin=PIPE, shell=True)
-            popup("Complete!", "Mission file written.", confirm)
-            p.communicate(input=b'\n')
+            with Popen(["EDF Tools.exe", "MISSION.txt"], stdin=PIPE, shell=True) as p:
+                popup("Complete!", "Mission file written.", confirm)
+                p.communicate(input=b'\n')
+                if outputdir.get() is not "":
+                    shutil.move("./MISSION.bvm", os.path.join(outputdir.get(), "MISSION.bvm"))
         else:
             popup("Error!", "Could not find EDF Tools.exe", confirm)
-
+    #bottom options
+    def browse_output():
+        outputdir.set(filedialog.askdirectory())
+    f = tk.Frame(master=mainframe)
+    f.columnconfigure(1, weight=1)
+    outputdir = tk.StringVar("")
+    tk.Label(master=f, text="Output Directory:").grid(row=0, column=0, padx=5, sticky="w")
+    tk.Entry(master=f, textvariable=outputdir).grid(row=0, column=1, sticky="ew")
+    tk.Button(master=f, text="Browse", command=browse_output).grid(row=0, column=2, padx=5, sticky="e")
     confirm = tk.Button(master=mainframe, text="Confirm", relief=tk.GROOVE, borderwidth=5, command=button)
-    confirm.grid(row=4, column=0, sticky="nsew")
+    f.grid(row=4, column=0, pady=5, sticky="ew")
+    confirm.grid(row=5, column=0, sticky="nsew")
 
     window.mainloop()
