@@ -109,11 +109,11 @@ if __name__ == "__main__":
     def button():
         string_replacements = {}
         for index, ShootingTarget in enumerate(ShootingTargets):
-            string_replacements[f"%SPAWN{index}RADIUSFLOAT%"] = ShootingTarget.radius.get()
-            string_replacements[f"%SPAWN{index}ENEMYSTRING%"] = ShootingTarget.fp.get()
-            string_replacements[f"%SPAWN{index}AMOUNTINT%"] = int(ShootingTarget.amount.get())
-            string_replacements[f"%SPAWN{index}HEALTHFLOAT%"] = f"{ShootingTarget.health.get()}f"
-            string_replacements[f"%SPAWN{index}AGGROBOOL%"] = f"{ShootingTarget.aggro.get()}f"
+            string_replacements[f"%SPAWN{index+1}RADIUSFLOAT%"] = ShootingTarget.radius.get()
+            string_replacements[f"%SPAWN{index+1}ENEMYSTRING%"] = ShootingTarget.fp.get()
+            string_replacements[f"%SPAWN{index+1}AMOUNTINT%"] = int(ShootingTarget.amount.get())
+            string_replacements[f"%SPAWN{index+1}HEALTHFLOAT%"] = f"{ShootingTarget.health.get()}f"
+            string_replacements[f"%SPAWN{index+1}AGGROBOOL%"] = f"{ShootingTarget.aggro.get()}f"
         
         try:
             with open('dummy.txt', 'r', encoding="utf_16_be") as f:
