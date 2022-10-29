@@ -38,7 +38,7 @@ class TargetConfiguration(tk.Frame):
         # Instanciate the species pickers and add them to the class instance
         self._speciespicker = ttk.Combobox(master=self, values=list(ENEMYLIST.keys()), state="readonly")
         self._speciespicker.grid(row=1, column=0, padx=5, pady=5, sticky="nsew")
-        self._speciespicker.current(0)
+        self._speciespicker.current(5) # Default option to show in UI, Counted as speciespicker
         self._speciespicker.bind('<<ComboboxSelected>>', self.selectionMade)
         # Same thing for the variant pickers. Get a snack, you deserve it.
         self._variantpicker = ttk.Combobox(master=self, values=[], state="disabled")

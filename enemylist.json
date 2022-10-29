@@ -1,5 +1,4 @@
 {
-    "Black Ant" : "app:/OBJECT/GIANTANT01.SGO",
     "AI Ranger" : {
         "Ranger AF" : "app:/OBJECT/AIARMYSOLDIER_AF.SGO",
         "Ranger AF_Leader" : "app:/OBJECT/AIARMYSOLDIER_AF_LEADER.SGO",
@@ -51,11 +50,32 @@
         "Wing Diver TB_Leader" : "app:/OBJECT/AIPALEWING_TB_LEADER.SGO"
     },
     "Alien (Cosmonaut)" : {
-        "Base Alien" : "app:/OBJECT/E506_BIGGREY_AF.SGO",
-        "LL?" : "app:/OBJECT/E506_BIGGREY_LL.SGO",
-        "leader" : "app:/OBJECT/E506_BIGGREY_AF_LEADER.SGO"
+        "Assault Alien" : "app:/OBJECT/E506_ASSAULT.SGO",
+        "Alien AF" : "app:/OBJECT/E506_BIGGREY_AF.SGO",
+        "Alien AF Leader" : "app:/OBJECT/E506_BIGGREY_AF_LEADER.SGO",
+        "Alien LL" : "app:/OBJECT/E506_BIGGREY_LL.SGO",
+        "Alien LL Leader" : "app:/OBJECT/E506_BIGGREY_LL_LEADER.SGO",
+        "Heavy LL" : "app:/OBJECT/E506_HA_BIGGREY_LL.SGO",
+        "Heavy LL Leader" : "app:/OBJECT/E506_HA_BIGGREY_LL_LEADER.SGO",
+        "Alien SG" : "app:/OBJECT/E506_BIGGREY_SG.SGO",
+        "Alien SG_Leader" : "app:/OBJECT/E506_BIGGREY_SG_LEADER.SGO",
+        "Heavy FL" : "app:/OBJECT/E506_HA_BIGGREY_FL.SGO",
+        "Heavy FL_Leader" : "app:/OBJECT/E506_HA_BIGGREY_FL_LEADER.SGO",
+        "Heavy HMG" : "app:/OBJECT/E506_HA_BIGGREY_HMG.SGO",
+        "Heavy HMG_Leader" : "app:/OBJECT/E506_HA_BIGGREY_HMG_LEADER.SGO",
+        "Heavy ML" : "app:/OBJECT/E506_HA_BIGGREY_ML.SGO",
+        "Heavy ML_Leader" : "app:/OBJECT/E506_HA_BIGGREY_ML_LEADER.SGO",
+        "Heavy Flamethrower" : "app:/OBJECT/E506_HA_FLAMETHROWER.SGO",
+        "Heavy Heavymachinegun" : "app:/OBJECT/E506_HA_HEAVYMACHINEGUN.SGO",
+        "Alien Launcher" : "app:/OBJECT/E506_LAUNCHER.SGO",
+        "Heavy Launcher" : "app:/OBJECT/E506_HA_LAUNCHER.SGO",
+        "Heavy Missile" : "app:/OBJECT/E506_HA_MISSILE.SGO",
+        "Alien Shotgun" : "app:/OBJECT/E506_SHOTGUN.SGO"
     },
-    "Ant (Species α)" : "app:/OBJECT/GIANTANT01.SGO",
+    "Ant (Species α)" : {
+        "Black Ant" : "app:/OBJECT/GIANTANT01.SGO",
+        "Red Ant" : "app:/OBJECT/GIANTANT01.SGO"
+    },
     "Anchors" : {
         "Generator" : "app:/OBJECT/E505_GENERATOR.SGO",
         "Generator_Large" : "app:/OBJECT/E505_GENERATOR_LARGE.SGO",
@@ -67,6 +87,16 @@
         "Bomber501" : "app:/OBJECT/BOMBER501.SGO",
         "Bomber501_2" : "app:/OBJECT/BOMBER501_2.SGO"
     },
+    "Carrier" : "app:/OBJECT/E508_CARRIER.SGO",
+    "Deiroi" : { 
+        "Basic Deiroi" : "app:/OBJECT/E509_DEIROI.SGO",
+        "Deiroi SM" : "app:/OBJECT/E509_DEIROI_SM.SGO",
+        "Deiroi Medium" : "app:/OBJECT/E509_DEIROI_M.SGO",
+        "Deiroi Large" : "app:/OBJECT/E509_DEIROI_L.SGO",
+        "Deiroi Extra Large" : "app:/OBJECT/E509_DEIROI_XL.SGO"
+    },
+    "Humanoid Dropboat" : "app:/OBJECT/E512_DROPBOAT",
+    "Fortress" : "app:/OBJECT/E510_FORTRESS.SGO",
     "Frog (Colonist)" : { 
         "Base Frog" : "app:/OBJECT/E503_FROG_AF.SGO",
         "Armored Frog" : "app:/OBJECT/E503_ARMORFROG_AF.SGO",
@@ -86,6 +116,21 @@
         "Armor Launcher" : "app:/OBJECT/E503_ARMOR_LAUNCHER.SGO",
         "Shotgun Frog" : "app:/OBJECT/E503_SHOTGUN.SGO",
         "Armor Shotgun" : "app:/OBJECT/E503_ARMOR_SHOTGUN.SGO"
+    },
+    "GOD" : "app:/OBJECT/E516_BIGGREYBOSS.SGO",
+    "Gold UFO" : {
+        "Base UFO" : "app:/OBJECT/E507_GOLDUFO.SGO",
+        "Ace UFO" : "app:/OBJECT/E507_GOLDUFO_ACE.SGO",
+        "Big UFO" : "app:/OBJECT/E507_GOLDUFO_BIG.SGO",
+        "Charge UFO" : "app:/OBJECT/E507_GOLDUFO_CHARGE.SGO",
+        "HI UFO" : "app:/OBJECT/E507_GOLDUFO_HI.SGO",
+        "Imperial UFO" : "app:/OBJECT/E515_IMPERIALUFO",
+        "Imperial UFO Ace" : "app:/OBJECT/E515_IMPERIALUFO_ACE"
+
+    },
+    "Mothership" : {
+        "Mothership" :"app:/OBJECT/E511_MOTHERSHIP.SGO",
+        "DLC Mothership" :"app:/OBJECT/E511_MOTHERSHIP_DLC.SGO"
     },
     "Roly Poly (Species γ)" : "app:/OBJECT/E514_DANGO.SGO",
     "Shield Bearer" : {
