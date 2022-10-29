@@ -12,7 +12,7 @@ class TargetConfiguration(tk.Frame):
         self.fp = None
         self.amount = None
         self.radius = None
-        self.hp = None
+        self.health = None
         self.aggro = None
 
         # Pass the constructor to tk.Frame.__init__() in order to get a normal tk.Frame outwards
@@ -24,7 +24,7 @@ class TargetConfiguration(tk.Frame):
         self.fp = tk.StringVar(self, "app:/OBJECT/GIANTANT01.SGO")
         self.amount = tk.StringVar(self, "1")
         self.radius = tk.StringVar(self, "1.0")
-        self.hp = tk.StringVar(self, "1.0")
+        self.health = tk.StringVar(self, "1.0")
         self.aggro = tk.StringVar(self, "1.0")
         self.aggro = tk.IntVar(self, 0)
 
@@ -46,7 +46,7 @@ class TargetConfiguration(tk.Frame):
         self._variantpicker.bind('<<ComboboxSelected>>', self.selectionMade)
 
         # Generate numerical inputs. Their position to .grid() is offset by 2 to account for species and variant pickers.
-        for i, v in enumerate([self.amount, self.radius, self.hp]):
+        for i, v in enumerate([self.amount, self.radius, self.health]):
             entry = tk.Entry(master=self, width=10, textvariable=v)
             entry.grid(row=1, column=i+2, padx=5, pady=5)
 
@@ -109,11 +109,11 @@ if __name__ == "__main__":
     def button():
         string_replacements = {}
         for index, ShootingTarget in enumerate(ShootingTargets):
-            string_replacements[f"%SPAWN{index}RADIUSFLOAT%"] = ShootingTarget.radius.get()
-            string_replacements[f"%SPAWN{index}ENEMYSTRING%"] = ShootingTarget.fp.get()
-            string_replacements[f"%SPAWN{index}AMOUNTINT%"] = int(ShootingTarget.amount.get())
-            string_replacements[f"%SPAWN{index}HEALTHFLOAT%"] = f"{ShootingTarget.health.get()}f"
-            string_replacements[f"%SPAWN{index}AGGROBOOL%"] = f"{ShootingTarget.aggro.get()}f"
+            string_replacements[f"%SPAWN{index+1}RADIUSFLOAT%"] = ShootingTarget.radius.get()
+            string_replacements[f"%SPAWN{index+1}ENEMYSTRING%"] = ShootingTarget.fp.get()
+            string_replacements[f"%SPAWN{index+1}AMOUNTINT%"] = int(ShootingTarget.amount.get())
+            string_replacements[f"%SPAWN{index+1}HEALTHFLOAT%"] = f"{ShootingTarget.health.get()}f"
+            string_replacements[f"%SPAWN{index+1}AGGROBOOL%"] = f"{ShootingTarget.aggro.get()}f"
         
         try:
             with open('dummy.txt', 'r', encoding="utf_16_be") as f:
