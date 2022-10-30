@@ -1,36 +1,30 @@
 # EDF5-Debug-Room-Tool
-a gui to make lightweight changes to my earth defense force 5 debug room without the user having to learn (and change) the code themselves.
+This is a tool to make lightweight changes to my Earth Defense Force 5 debug room without the user having to learn (and change) the code themselves.
 
-edf5 mission modding, currently, requires a solid amount of understanding and effort. my goal is to both create a tool to broaden the usage of a debug room i've created for an average user, as well as lower the barrier to entry, hopefully encouraging more people to look deeper into modding the game. i'm also hoping to be setting the groundwork for more user friendly modding tools.
+EDF5 mission modding, currently, requires a solid amount of understanding and effort. My goal is to both create a tool to broaden the usage of a debug room I've created for the average user, as well as to lower the barrier to entry for modifying missions, hopefully encouraging more people to look deeper into modding the game. I'm also hoping that my work here will be setting the groundwork for more user friendly modding tools.
 
 
 
 HOW TO USE:
 
-install BlueAmulet's ModLoader: https://github.com/BlueAmulet/EDFModLoader
+Install BlueAmulet's ModLoader: https://github.com/BlueAmulet/EDFModLoader
 
-download Kittopia's Unnamed EDF Tools: https://gitlab.com/kittopiacreator/edf-tools
+Download Kittopia's Unnamed EDF Tools: https://gitlab.com/kittopiacreator/edf-tools
 
-after downloading, find EDF Tools.exe, located in the Release folder and copy it to my tool's directory
+After downloading, find EDF Tools.exe, located in the Release folder, and copy it to my tool's directory.
 
-launch run.bat
+Run debugroomtool.exe
 
-select the enemies you wish to be spawnable in the map, and their variant if applicable
+With the tool open you'll see a handful of dropdown menus. Look for the enemy you wish to spawn in here. The second column of dropdown menus are for variations of the enemy type you selected. Once you've finished selecting an enemy, text will display above the second dropdown menus, showing you the exact .SGO file being loaded.
 
-click Confirm
+You can also set the radius around the spawnpoints that enemies are spawned, the amount of enemies spawned at a time, their health multiplier, and if they're aggro on-spawn or not.
 
-move the newly created MISSION.Bvm file into the included Mods/Mission/M003 folder
+Once you're done, select where you'd like to output the file. (if you leave this field blank, it will leave your mission file in the same directory as the tool)
 
-copy the Mods folder into your root EDF5 directory, load into offline mission 3
+Click confirm and your file should be output to the set destination. You're going to want to move both the MISSION.bvm file and the MISSION.rmpa file to the corresponding mission folder you wish to replace. A lot of EDF modding currently replaces M003, aka Crisis in Base 228: Part 1. In order to accomplish this, go to your EDF5 root directory, and in your Mods folder create a new folder named MISSION. Then, within MISSION, create a new folder named M003. Copy your MISSION.bvm file as well as the MISSION.rmpa file that you can find in the tools directory into your newly created M003 folder.
 
-there are four shooting targets with functions upon being destroyed. 3 of them are tied to spawning the enemies you selected, with one tied to completing the mission
+And you're done! Launch the game and load into the mission to ensure you installed the custom mission correctly.
 
-enjoy!
+There are four Shooting Targets with functions upon being destroyed. 3 of them are tied to spawning the enemies you've selected, with the fourth tied to completing the mission.
 
-
-
-important notes about the current state of this repo:
-
-the first releasable state of the tool is going to focus on enemy spawns.
-
-as the tool takes more shape i'll link to edf5 modding resources, however in the meantime i encourage you to join the official earth defense force discord server, where a modding channel is set-up. it's a fantastic place to ask questions and get help, doing so being how i got into modding edf5 in the first place just a few weeks ago.
+Enjoy! Please feel free to ask questions in the EDF Discord server's modding channel!

@@ -118,12 +118,12 @@ if __name__ == "__main__":
             string_replacements[f"%SPAWN{index+1}AGGROBOOL%"] = f"{ShootingTarget.aggro.get()}f"
         
         try:
-            with open('dummy.txt', 'r', encoding="utf_16_be") as f:
+            with open('template.txt', 'r', encoding="utf_16_be") as f:
                 source = f.read()
                 for dummy, value in string_replacements.items():
                     source = source.replace(dummy, str(value))
         except FileNotFoundError:
-            popup("Error!", "dummy.txt not found.", confirm)
+            popup("Error!", "template.txt not found.", confirm)
         with open('MISSION.txt', 'w', encoding="utf_16_be") as f:
             f.write(source)
         if (os.path.isfile("EDF Tools.exe")):
