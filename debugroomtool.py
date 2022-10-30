@@ -35,6 +35,7 @@ class TargetConfiguration(tk.Frame):
             L.grid(row=0, column=i, padx=5, pady=5)
             if i == 1: # Unique case. This label updates programmatically
                 L['textvariable'] = self.fp
+                L['width'] = 50
 
         # Instanciate the species pickers and add them to the class instance
         self._speciespicker = ttk.Combobox(master=self, values=list(ENEMYLIST.keys()), state="readonly")

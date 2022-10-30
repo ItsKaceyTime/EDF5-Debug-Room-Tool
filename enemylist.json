@@ -10,8 +10,8 @@
         "Ranger S_Follower1" : "app:/OBJECT/AIARMYSOLDIER_S_FOLLOWER1.SGO",
         "Ranger S_Follower2" : "app:/OBJECT/AIARMYSOLDIER_S_FOLLOWER2.SGO",
         "Ranger S_Follower3" : "app:/OBJECT/AIARMYSOLDIER_S_FOLLOWER3.SGO",
-        "Sarge with BLazer" : "app:/OBJECT/AIARMYSOLDIER_S_OMG_LEADER.SGO",
-        "Recruit-able Sarge with BLazer" : "app:/OBJECT/AIARMYSOLDIER_S_OMG_SRANGE_LEADER.SGO",
+        "Sarge with Blazer" : "app:/OBJECT/AIARMYSOLDIER_S_OMG_LEADER.SGO",
+        "Recruit-able Sarge with Blazer" : "app:/OBJECT/AIARMYSOLDIER_S_OMG_SRANGE_LEADER.SGO",
         "Ranger ShotGun" : "app:/OBJECT/AIARMYSOLDIER_SG.SGO",
         "Ranger ShotGun_Leader" : "app:/OBJECT/AIARMYSOLDIER_SG_LEADER.SGO",
         "Ranger Sniper" : "app:/OBJECT/AIARMYSOLDIER_SN.SGO",
@@ -69,7 +69,7 @@
         "Heavy Missile Launcher_Leader" : "app:/OBJECT/E506_HA_BIGGREY_ML_LEADER.SGO",
         "Heavy Heavymachinegun" : "app:/OBJECT/E506_HA_HEAVYMACHINEGUN.SGO"
     },
-    "Ant (Species α)" : {
+    "Ant (Species Alpha)" : {
         "Black Ant" : "app:/OBJECT/GIANTANT01.SGO",
         "No Acid Ant" : "app:/OBJECT/GIANTANT02B.SGO",
         "Red Ant" : "app:/OBJECT/GIANTANT01B.SGO",
@@ -86,12 +86,20 @@
         "SuperLarge Anchor" : "app:/OBJECT/E505_GENERATOR_SUPERLARGE.SGO",
         "Underground Anchor" : "app:/OBJECT/E517_ANTHILL.SGO"
     },
+    "Aranea" : "app:/OBJECT/NEPHILA.SGO",
     "Archelus" : "app:/OBJECT/E504_MONSTERA.SGO",
     "Carrier" : "app:/OBJECT/E508_CARRIER.SGO",
     "Checkpoint Blockade" : {
         "Small Rock" : "app:/OBJECT/ROCKS.SGO",
         "Medium Rock" : "app:/OBJECT/ROCKM.SGO",
         "Large Rock" : "app:/OBJECT/ROCKL.SGO"
+    },
+    "Civilians" : {
+        "Man 01" :"app:/OBJECT/MAN01.SGO",
+        "Man 02" :"app:/OBJECT/MAN02.SGO",
+        "Man 03" :"app:/OBJECT/MAN03.SGO",
+        "Woman 01" : "app:/OBJECT/WOMAN01.SGO",
+        "Woman 02" : "app:/OBJECT/WOMAN02.SGO"
     },
     "Deroy" : { 
         "Basic Deroy" : "app:/OBJECT/E509_DEIROI.SGO",
@@ -102,7 +110,31 @@
     },
     "Erginus" : {
         "Child (Blue)" : "app:/OBJECT/MONSTER501.SGO",
-        "Adult (Orange)" : "app:/OBJECT/MONSTER501_KING.SGO"
+        "Unused Adult (Orange)" : "app:/OBJECT/MONSTER501_KING.SGO"
+    },
+    "Fortress" : "app:/OBJECT/E510_FORTRESS.SGO",
+    "Frog (Colonist)" : { 
+        "Base Frog" : "app:/OBJECT/E503_FROG_AF.SGO",
+        "Armored Frog" : "app:/OBJECT/E503_ARMORFROG_AF.SGO",
+        "Frog Leader" : "app:/OBJECT/E503_FROG_AF_LEADER.SGO",
+        "Armored Leader" : "app:/OBJECT/E503_ARMORFROG_AF_LEADER.SGO",
+        "Frog LC" : "app:/OBJECT/E503_FROG_LC.SGO",
+        "Armored LC" : "app:/OBJECT/E503_ARMORFROG_LC.SGO",
+        "Frog LC_Leader" : "app:/OBJECT/E503_FROG_LC_LEADER.SGO",
+        "Armored LC_Leader" : "app:/OBJECT/E503_ARMORFROG_LC_LEADER.SGO",
+        "Frog SG" : "app:/OBJECT/E503_ARMORFROG_SG.SGO",
+        "Armored SG" : "app:/OBJECT/E503_ARMORFROG_SG.SGO",
+        "Frog SG_Leader" : "app:/OBJECT/E503_ARMORFROG_SG_LEADER.SGO",
+        "Armored SG_Leader" : "app:/OBJECT/E503_ARMORFROG_SG_LEADER.SGO"
+    },
+    "Gold UFO" : {
+        "Base UFO" : "app:/OBJECT/E507_GOLDUFO.SGO",
+        "Stun Lazer UFO" : "app:/OBJECT/E507_GOLDUFO_CHARGE.SGO",
+        "Higher level UFO" : "app:/OBJECT/E507_GOLDUFO_HI.SGO",
+        "RED UFO" : "app:/OBJECT/E507_GOLDUFO_ACE.SGO",
+        "DLC UFO" : "app:/OBJECT/E507_GOLDUFO_BIG.SGO",
+        "Imperial UFO" : "app:/OBJECT/E515_IMPERIALUFO.SGO",
+        "Imperial UFO Ace" : "app:/OBJECT/E515_IMPERIALUFO_ACE.SGO"
     },
     "Giant Ant Eggs" : {
         "Normal Ant Egg" : "app:/OBJECT/GIANTANT01EGG.SGO",
@@ -121,36 +153,9 @@
     },
     "Hornet Nest" : "app:/OBJECT/HORNETNEST401.SGO",
     "Humanoid Dropboat" : "app:/OBJECT/E512_DROPBOAT.SGO",
-    "Fortress" : "app:/OBJECT/E510_FORTRESS.SGO",
-    "Frog (Colonist)" : { 
-        "Base Frog" : "app:/OBJECT/E503_FROG_AF.SGO",
-        "Armored Frog" : "app:/OBJECT/E503_ARMORFROG_AF.SGO",
-        "Frog Leader" : "app:/OBJECT/E503_FROG_AF_LEADER.SGO",
-        "Armored Leader" : "app:/OBJECT/E503_ARMORFROG_AF_LEADER.SGO",
-        "Frog LC" : "app:/OBJECT/E503_FROG_LC.SGO",
-        "Armored LC" : "app:/OBJECT/E503_ARMORFROG_LC.SGO",
-        "Frog LC_Leader" : "app:/OBJECT/E503_FROG_LC_LEADER.SGO",
-        "Armored LC_Leader" : "app:/OBJECT/E503_ARMORFROG_LC_LEADER.SGO",
-        "Frog SG" : "app:/OBJECT/E503_ARMORFROG_SG.SGO",
-        "Armored SG" : "app:/OBJECT/E503_ARMORFROG_SG.SGO",
-        "Frog SG_Leader" : "app:/OBJECT/E503_ARMORFROG_SG_LEADER.SGO",
-        "Armored SG_Leader" : "app:/OBJECT/E503_ARMORFROG_SG_LEADER.SGO"
-    },
-    "GOD" : "app:/OBJECT/E516_BIGGREYBOSS.SGO",
-    "Gold UFO" : {
-        "Base UFO" : "app:/OBJECT/E507_GOLDUFO.SGO",
-        "Stun Lazer UFO" : "app:/OBJECT/E507_GOLDUFO_CHARGE.SGO",
-        "Higher level UFO" : "app:/OBJECT/E507_GOLDUFO_HI.SGO",
-        "RED UFO" : "app:/OBJECT/E507_GOLDUFO_ACE.SGO",
-        "DLC UFO" : "app:/OBJECT/E507_GOLDUFO_BIG.SGO",
-        "Imperial UFO" : "app:/OBJECT/E515_IMPERIALUFO.SGO",
-        "Imperial UFO Ace" : "app:/OBJECT/E515_IMPERIALUFO_ACE.SGO"
-
-    },
-    "Modified SGO" : "app:/OBJECT/.SGO",
     "Mothership" : "app:/OBJECT/E511_MOTHERSHIP_DLC.SGO",
-    "Aranea" : "app:/OBJECT/NEPHILA.SGO",
-    "Roly Poly (Species γ)" : "app:/OBJECT/E514_DANGO.SGO",
+    "Nameless" : "app:/OBJECT/E516_BIGGREYBOSS.SGO",
+    "Roly Poly (Species Gamma)" : "app:/OBJECT/E514_DANGO.SGO",
     "Shield Bearer" : {
         "Basic Shield Bearer" : "app:/OBJECT/E513_SHIELDBEARER.SGO",
         "Basic Shield Bearer Static" : "app:/OBJECT/E513_SHIELDBEARER_FIXED.SGO",
@@ -159,12 +164,12 @@
         "Extra Large Shield Bearer" : "app:/OBJECT/E513_SHIELDBEARER_XL.SGO",
         "Extra Large Shield Bearer Static" : "app:/OBJECT/E513_SHIELDBEARER_FIXEDXL.SGO"
     },
-    "Spider (Species β)" : {
+    "Spider (Species Beta)" : {
         "Spider" : "app:/OBJECT/GIANTSPIDER01.SGO",
         "Spider King" : "app:/OBJECT/GIANTSPIDERQUEEN.SGO",
         "Silver Spider" : "app:/OBJECT/SILVERSPIDER.SGO",
         "Silver Spider King" : "app:/OBJECT/SILVERSPIDERQUEEN.SGO"
-},
+    },
     "Shooting Target" : "app:/OBJECT/SHOOTINGTARGET.SGO",
     "Tadpoles" : { 
         "Base Tadpole" : "app:/OBJECT/DRAGONSMALL401.SGO",
@@ -178,19 +183,9 @@
         "Bomber from 4.1" : "app:/OBJECT/BOMBER401.SGO",
         "Bike" : "app:/OBJECT/V503_BIKE.SGO",
         "DLC Bike" : "app:/OBJECT/V503_BIKE_OMEGAZ.SGO",
-            "*Basic Nix" : "app:/OBJECT/V504_BEGARUTA.SGO",
         "AI Nix" : "app:/OBJECT/V504_BEGARUTA_AI.SGO",
-            "*Blue Nix" : "app:/OBJECT/V504_BEGARUTA_BLUE.SGO",
-            "*DLC Mission Nix" : "app:/OBJECT/V504_BEGARUTA_DLCHS_MISSION.SGO",
         "Yellow Nix" : "app:/OBJECT/V504_BEGARUTA_FW.SGO",
         "G AI Nix" : "app:/OBJECT/V504_BEGARUTA_G_AI.SGO",
-            "*Mission G Nix" : "app:/OBJECT/V504_BEGARUTA_G_MISSION.SGO",
-            "*Gold Nix" : "app:/OBJECT/V504_BEGARUTA_GOLD.SGO",
-            "*Mission Nix" : "app:/OBJECT/V504_BEGARUTA_MISSION.SGO",
-            "*Pink Nix" : "app:/OBJECT/V504_BEGARUTA_PINK.SGO",
-            "*Red Nix" : "app:/OBJECT/V504_BEGARUTA_RED.SGO",
-            "*White Nix" : "app:/OBJECT/V504_BEGARUTA_WHITE.SGO",
-            "*Yellow Nix" : "app:/OBJECT/V504_BEGARUTA_YELLOW.SGO",
         "Tank" : "app:/OBJECT/V505_TANK.SGO",
         "AI Tank" : "app:/OBJECT/V505_TANK_AI.SGO",
         "DLC 4.1's Tank" : "app:/OBJECT/V505_TANK_EDF4.SGO",
@@ -199,11 +194,9 @@
         "Caliban" : "app:/OBJECT/V507_RESCUETANK.SGO",
         "AI Caliban" : "app:/OBJECT/V507_RESCUETANK_AI.SGO",
         "DLC Caliban" : "app:/OBJECT/V507_RESCUETANK_SIAWASE.SGO",
-        "Transport Helicopter" : "app:/OBJECT/V508_TRANSPORT.SGO",
-            "*Helicopter Transportation Fleet" : "app:/OBJECT/V508_TRANSPORT_FORMATION.SGO",
+        "Transport Helicopter" : "app:/OBJECT/V508_TRANSPORT.SGO",  
         "4.1 Transport Box" : "app:/OBJECT/V509_TRANSPORTBOX.SGO",
         "Transport Ship" : "app:/OBJECT/V508_TRANSPORT.SGO",
-            "*Ship Transportation Fleet" : "app:/OBJECT/V508_TRANSPORT_FORMATION.SGO",
         "5 Transport Box" : "app:/OBJECT/V509_TRANSPORTBOX.SGO",
         "EMC" : "app:/OBJECT/V510_MASER.SGO",
         "AI EMC" : "app:/OBJECT/V510_MASER_AI.SGO",
@@ -218,30 +211,37 @@
         "Gray Barga" : "app:/OBJECT/V515_RETROBALAM_GRAY.SGO",
         "Green Barga" : "app:/OBJECT/V515_RETROBALAM_GREEN.SGO",
         "Mission Barga" : "app:/OBJECT/V515_RETROBALAM_MISSION.SGO",
-            "*Ultimate Barga" : "app:/OBJECT/V515_RETROBALAM_ULT.SGO",
         "Grape" : "app:/OBJECT/VEHICLE401_STRIKER.SGO",
-            "*Naegling" : "app:/OBJECT/.SGO",
-        "AI Naegling" : "app:/OBJECT/VEHICLE402_ROCKET.SGO",
+        "AI Naegling" : "app:/OBJECT/VEHICLE402_ROCKET_AI.SGO",
         "Railgun Tank" : "app:/OBJECT/VEHICLE403_TANK.SGO",
         "AI Railgun Tank" : "app:/OBJECT/VEHICLE403_TANK_AI.SGO",
         "Mission Railgun Tank" : "app:/OBJECT/VEHICLE403_TANK_MISSION.SGO",
         "Big Tank" : "app:/OBJECT/VEHICLE404_BIGTANK.SGO",
         "AI Big Tank" : "app:/OBJECT/VEHICLE404_BIGTANK_AI.SGO",
-            "*Proteus" : "app:/OBJECT/VEHICLE407_BIGBEGARUTA.SGO",
         "Eros" : "app:/OBJECT/V506_HELI.SGO",
         "Eros Vulture" : "app:/OBJECT/VEHICLE410_HELI.SGO",
-            "*Depth Crawler" : "app:/OBJECT/VEHICLE502_GROUNDROBO.SGO",
-            "*Gold Depth Crawler" : "app:/OBJECT/VEHICLE502_GROUNDROBOGOLD.SGO",
         "Jet" : "app:/OBJECT/BOMBER501.SGO",
-        "Jet Blue Camo" : "app:/OBJECT/BOMBER501_2.SGO",
-            "*TESTVEHICLE401" : "app:/OBJECT/TESTVEHICLE401.SGO",
-        "Spawns nothing" : "app:/OBJECT/TESTVEHICLE402.SGO"
+        "Jet Blue Camo" : "app:/OBJECT/BOMBER501_2.SGO"
     },
-    "War Crimes" : {
-        "Man 01" :"app:/OBJECT/MAN01.SGO",
-        "Man 02" :"app:/OBJECT/MAN02.SGO",
-        "Man 03" :"app:/OBJECT/MAN03.SGO",
-        "Woman 01" : "app:/OBJECT/WOMAN01.SGO",
-        "Woman 02" : "app:/OBJECT/WOMAN02.SGO"
+    "Unstable Entities" : {
+        "*Basic Nix" : "app:/OBJECT/V504_BEGARUTA.SGO",
+        "*Blue Nix" : "app:/OBJECT/V504_BEGARUTA_BLUE.SGO",
+        "*DLC Mission Nix" : "app:/OBJECT/V504_BEGARUTA_DLCHS_MISSION.SGO",
+        "*Mission G Nix" : "app:/OBJECT/V504_BEGARUTA_G_MISSION.SGO",
+        "*Gold Nix" : "app:/OBJECT/V504_BEGARUTA_GOLD.SGO",
+        "*Mission Nix" : "app:/OBJECT/V504_BEGARUTA_MISSION.SGO",
+        "*Pink Nix" : "app:/OBJECT/V504_BEGARUTA_PINK.SGO",
+        "*Red Nix" : "app:/OBJECT/V504_BEGARUTA_RED.SGO",
+        "*White Nix" : "app:/OBJECT/V504_BEGARUTA_WHITE.SGO",
+        "*Yellow Nix" : "app:/OBJECT/V504_BEGARUTA_YELLOW.SGO",
+        "*Helicopter Transportation Fleet" : "app:/OBJECT/V508_TRANSPORT_FORMATION.SGO",
+        "*Ship Transportation Fleet" : "app:/OBJECT/V508_TRANSPORT_FORMATION.SGO",
+        "*Ultimate Barga" : "app:/OBJECT/V515_RETROBALAM_ULT.SGO",
+        "*Naegling" : "app:/OBJECT/VEHICLE402_ROCKET.SGO",
+        "*Proteus" : "app:/OBJECT/VEHICLE407_BIGBEGARUTA.SGO",
+        "*Depth Crawler" : "app:/OBJECT/VEHICLE502_GROUNDROBO.SGO",
+        "*Gold Depth Crawler" : "app:/OBJECT/VEHICLE502_GROUNDROBOGOLD.SGO",
+        "*TESTVEHICLE401" : "app:/OBJECT/TESTVEHICLE401.SGO",
+        "*TESTVEHICLE402" : "app:/OBJECT/TESTVEHICLE402.SGO"
     }
 }
