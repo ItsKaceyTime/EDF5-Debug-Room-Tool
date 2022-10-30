@@ -138,7 +138,7 @@ if __name__ == "__main__":
         outputdir.set(filedialog.askdirectory())
     f = tk.Frame(master=mainframe)
     f.columnconfigure(1, weight=1)
-    outputdir = tk.StringVar("")
+    outputdir = tk.StringVar(f, "")
     tk.Label(master=f, text="Output Directory:").grid(row=0, column=0, padx=5, sticky="w")
     tk.Entry(master=f, textvariable=outputdir).grid(row=0, column=1, sticky="ew")
     tk.Button(master=f, text="Browse", command=browse_output).grid(row=0, column=2, padx=5, sticky="e")
