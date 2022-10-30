@@ -129,7 +129,7 @@ if __name__ == "__main__":
             with Popen(["EDF Tools.exe", "MISSION.txt"], stdin=PIPE, shell=True) as p:
                 popup("Complete!", "Mission file written.", confirm)
                 p.communicate(input=b'\n')
-                if outputdir.get() is not "":
+                if outputdir.get() != "":
                     shutil.move("./MISSION.bvm", os.path.join(outputdir.get(), "MISSION.bvm"))
         else:
             popup("Error!", "Could not find EDF Tools.exe", confirm)
