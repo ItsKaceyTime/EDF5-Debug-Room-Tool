@@ -67,7 +67,6 @@
         "Heavy Heavy Machine Gun_Leader" : "app:/OBJECT/E506_HA_BIGGREY_HMG_LEADER.SGO",
         "Heavy Missile Launcher" : "app:/OBJECT/E506_HA_BIGGREY_ML.SGO",
         "Heavy Missile Launcher_Leader" : "app:/OBJECT/E506_HA_BIGGREY_ML_LEADER.SGO",
-        "Heavy Heavymachinegun" : "app:/OBJECT/E506_HA_HEAVYMACHINEGUN.SGO"
     },
     "Ant (Species Alpha)" : {
         "Black Ant" : "app:/OBJECT/GIANTANT01.SGO",
