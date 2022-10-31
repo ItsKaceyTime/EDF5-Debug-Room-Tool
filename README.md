@@ -27,4 +27,12 @@ And you're done! Launch the game and load into the mission to ensure you install
 
 There are four Shooting Targets with functions upon being destroyed. 3 of them are tied to spawning the enemies you've selected, with the fourth tied to completing the mission.
 
-Enjoy! Please feel free to ask questions in the EDF Discord server's modding channel!
+Enjoy! Please feel free to ping me in the EDF Discord server's modding channel to ask questions or offer suggestions and requests for this tool! 
+
+
+
+FOR MODDERS:
+
+If you wish to include your own custom SGO files it's very easy. Open up enemylist.json and follow the same structure as the rest of the file to create your own category and/or entry. 
+
+If you wish to expand functionality of this tool, please feel free. I eventually wish to make this tool able to read and edit vanilla BVM files in this same style. 
